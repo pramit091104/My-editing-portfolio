@@ -41,11 +41,24 @@ const YOUTUBE_VIDEOS = [
 ];
 
 const YoutubeGallery = () => (
-  <div className="w-full max-w-3xl mx-auto px-2 relative">
+  <div className="w-full max-w-3xl mx-auto px-2 relative rounded-2xl overflow-hidden"
+    style={{
+      background: "linear-gradient(135deg, #181A20 0%, #232535 100%)",
+      boxShadow:
+        "0 6px 60px 0 rgba(67,56,202,0.09), 0 0 0px 1.5px rgba(236,72,153,0.18)",
+      minHeight: "460px"
+    }}
+  >
+    {/* Dark overlay for deeper/night effect */}
+    <div
+      aria-hidden="true"
+      className="absolute inset-0 z-0 pointer-events-none"
+      style={{ background: "rgba(12,10,24,0.77)" }}
+    />
     {/* Inject custom keyframes for hologram animation */}
     <style>{HOLOGRAM_ANIMATION}</style>
     <Carousel
-      className="w-full"
+      className="w-full relative z-10"
       opts={{
         align: "center",
         loop: true,
@@ -66,7 +79,7 @@ const YoutubeGallery = () => (
                   "0 0 36px 0 rgba(99,102,241,0.33), 0 0 0px 1.5px rgba(109,40,217,0.20)",
                 animation: "hologramGlow 2.2s infinite alternate cubic-bezier(0.4,0,0.6,1)",
                 border: "2px solid transparent",
-                background: "linear-gradient(120deg, rgba(236,72,153,0.16) 0%, rgba(67,56,202,0.11) 100%)"
+                background: "linear-gradient(120deg, rgba(52,30,77,0.30) 0%, rgba(67,56,202,0.21) 100%)"
               }}
             >
               {/* Hologram animated border overlay */}
@@ -107,12 +120,15 @@ const YoutubeGallery = () => (
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                   allowFullScreen
                   className="w-full h-full"
+                  style={{
+                    background: "#0f1016"
+                  }}
                 />
                 <Youtube className="absolute top-2 left-2 text-red-600 bg-white/70 rounded-full p-1" size={28} />
               </div>
               <div className="p-5 flex flex-col gap-2 z-20">
-                <h3 className="font-semibold text-lg text-zinc-900">{video.title}</h3>
-                <p className="text-muted-foreground text-sm">{video.description}</p>
+                <h3 className="font-semibold text-lg text-white">{video.title}</h3>
+                <p className="text-zinc-300 text-sm">{video.description}</p>
               </div>
             </div>
           </CarouselItem>
@@ -125,3 +141,4 @@ const YoutubeGallery = () => (
 );
 
 export default YoutubeGallery;
+
