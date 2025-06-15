@@ -4,10 +4,12 @@ import SectionTitle from "@/components/SectionTitle";
 import YoutubeGallery from "@/components/YoutubeGallery";
 import ReelsGallery from "@/components/ReelsGallery";
 import { Youtube, Video } from "lucide-react";
+import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
   return (
     <main className="min-h-screen w-full bg-background">
+      <AboutSection />
       <HeroSection />
 
       {/* YouTube Gallery Section */}
