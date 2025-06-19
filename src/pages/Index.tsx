@@ -8,33 +8,43 @@ import AboutSection from "@/components/AboutSection";
 
 const Index = () => {
   return (
-    <main className="min-h-screen w-full bg-gradient-to-br from-[#191729] via-[#232535] to-[#181A20] text-zinc-100">
+    <main className="min-h-screen w-full bg-zinc-950 text-zinc-100">
       <AboutSection />
       <HeroSection />
 
       {/* YouTube Gallery Section */}
-      <section className="max-w-6xl mx-auto py-12 w-full bg-zinc-950/80 rounded-2xl shadow-lg border border-zinc-800 mt-12 mb-8 animate-fade-in">
-        <SectionTitle
-          icon={<Youtube className="text-red-600" size={32} />}
-          title="YouTube Highlights"
-          subtitle="Featured YouTube video edits for shows, business, and education."
-        />
-        <YoutubeGallery />
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle
+            icon={<Youtube className="text-red-500" />}
+            title="YouTube Portfolio"
+            subtitle="Featured video edits showcasing creative storytelling and professional production quality."
+          />
+          <YoutubeGallery />
+        </div>
       </section>
 
-      {/* Instagram Reels/Shorts Section */}
-      <section className="mt-0 max-w-6xl mx-auto py-12 w-full bg-[#191729]/90 rounded-2xl shadow-lg border border-zinc-800 mb-16 animate-fade-in">
-        <SectionTitle
-          icon={<Video className="text-primary" size={32} />}
-          title="Instagram Reels & Shorts"
-          subtitle="Mix of Business, Informative, & Creative reels – vertical format, fast and engaging."
-        />
-        <ReelsGallery />
+      {/* Instagram Reels Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-zinc-950 to-zinc-900">
+        <div className="max-w-7xl mx-auto">
+          <SectionTitle
+            icon={<Video className="text-violet-400" />}
+            title="Reels & Shorts"
+            subtitle="Vertical format content designed for maximum engagement across social platforms."
+          />
+          <ReelsGallery />
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="mt-16 py-10 text-center text-sm text-zinc-600 border-t border-zinc-800 bg-zinc-900/70">
-        &copy; {new Date().getFullYear()} Video Editing Portfolio. Crafted with <span className="text-primary">♥</span>
+      <footer className="py-12 text-center border-t border-zinc-800/50">
+        <div className="max-w-4xl mx-auto px-4">
+          <p className="text-zinc-500">
+            &copy; {new Date().getFullYear()} Creative Video Portfolio. 
+            <span className="text-violet-400 mx-2">•</span>
+            Crafted with passion for visual storytelling.
+          </p>
+        </div>
       </footer>
     </main>
   );

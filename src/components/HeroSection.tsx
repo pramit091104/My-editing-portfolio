@@ -3,20 +3,39 @@ import { Video } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="w-full py-24 flex flex-col items-center bg-gradient-to-b from-[#1a1736] via-[#181A20] to-[#22223B] relative overflow-hidden animate-fade-in">
-      {/* Animated blurred background for creative flair */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 blur-3xl opacity-40 pointer-events-none w-[80vw] h-[300px] bg-gradient-to-tr from-indigo-500 via-purple-800/60 to-pink-400/60 rounded-full -mt-20 z-0" />
-      <div className="max-w-4xl w-full flex flex-col items-center text-center gap-8 z-10">
-        <span className="inline-flex items-center justify-center rounded-full bg-primary/15 px-4 py-2 mb-2 text-primary font-medium text-lg animate-scale-in shadow-2xl shadow-indigo-500/10">
-          <Video className="mr-2" size={28} /> Video Editing Portfolio
-        </span>
-        <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-zinc-50 animate-fade-in drop-shadow-glow">
-          Elevate Your <span className="text-primary">Story</span>.<br className="hidden md:inline" />
-          Inspire Your Audience.
+    <section className="relative w-full py-32 flex flex-col items-center justify-center bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 overflow-hidden">
+      {/* Minimal background elements */}
+      <div className="absolute top-1/2 left-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-violet-600/5 to-purple-600/5 blur-3xl transform -translate-y-1/2" />
+      <div className="absolute bottom-1/3 right-1/4 w-48 h-48 rounded-full bg-gradient-to-r from-blue-600/5 to-cyan-600/5 blur-3xl" />
+      
+      <div className="relative max-w-5xl mx-auto px-4 text-center z-10">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900/50 border border-zinc-800/50 backdrop-blur-sm mb-8">
+          <Video className="w-5 h-5 text-violet-400" />
+          <span className="text-zinc-300 font-medium">Video Editor & Storyteller</span>
+        </div>
+
+        {/* Main Heading */}
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-tight leading-tight">
+          Crafting
+          <br />
+          <span className="font-bold bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Visual Stories
+          </span>
         </h1>
-        <p className="text-xl text-zinc-300 max-w-2xl mx-auto animate-fade-in">
-          Showcasing transformative edits, creative reels, and impactful business projects. Explore the highlights below!
+
+        {/* Subtitle */}
+        <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+          Transforming ideas into compelling narratives through creative editing, 
+          cinematic storytelling, and engaging content.
         </p>
+
+        {/* Minimal decoration */}
+        <div className="flex items-center justify-center gap-4">
+          <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-violet-400" />
+          <div className="w-2 h-2 rounded-full bg-violet-400" />
+          <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-purple-400" />
+        </div>
       </div>
     </section>
   );

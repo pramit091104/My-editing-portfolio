@@ -6,17 +6,21 @@ interface SectionTitleProps {
   title: string;
   subtitle?: string;
 }
+
 const SectionTitle = ({ icon, title, subtitle }: SectionTitleProps) => (
-  <div className="flex flex-col items-center mb-8 mt-16 w-full">
-    <div className="flex items-center gap-2 text-3xl font-bold text-zinc-800 animate-fade-in">
-      {icon && <span className="text-primary">{icon}</span>}
-      <span>{title}</span>
+  <div className="text-center mb-12">
+    <div className="flex items-center justify-center gap-3 mb-4">
+      {icon && <span className="text-2xl">{icon}</span>}
+      <h2 className="text-3xl md:text-4xl font-light text-white">
+        {title}
+      </h2>
     </div>
     {subtitle && (
-      <div className="text-base text-muted-foreground mt-2 max-w-lg animate-fade-in">
+      <p className="text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
         {subtitle}
-      </div>
+      </p>
     )}
+    <div className="w-24 h-0.5 bg-gradient-to-r from-violet-400 to-purple-400 mx-auto mt-4" />
   </div>
 );
 
