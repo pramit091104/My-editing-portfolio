@@ -77,7 +77,9 @@ const HeroSection = () => {
             <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-violet-600/20 to-purple-600/20 backdrop-blur-sm border border-zinc-700/50 overflow-hidden shadow-2xl">
               {/* Placeholder for your image - replace with actual image */}
               <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
-                <div className="text-6xl lg:text-8xl text-zinc-600">📷</div>
+                <div className="text-6xl lg:text-8xl text-zinc-600">
+                  <img src="./image1.jpg" alt="Pramit - Video Editor" />
+                </div>
               </div>
               
               {/* Uncomment and replace with your actual image */}

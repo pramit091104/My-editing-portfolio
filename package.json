@@ -79,5 +79,18 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
-  }
+  },
+  "description": "**URL**: https://lovable.dev/projects/e15fe88c-ddcf-4c99-bafd-2f3feb9206ac",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pramit091104/reel-vision-studio-showcase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pramit091104/reel-vision-studio-showcase/issues"
+  },
+  "homepage": "https://github.com/pramit091104/reel-vision-studio-showcase#readme"
 }
