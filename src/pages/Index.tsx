@@ -9,7 +9,7 @@ import AboutSection from "@/components/AboutSection";
 const Index = () => {
   return (
     <main className="min-h-screen w-full bg-zinc-950 text-zinc-100">
-      <AboutSection />
+      {/* Hero Section First */}
       <HeroSection />
 
       {/* YouTube Gallery Section */}
@@ -35,6 +35,11 @@ const Index = () => {
           <ReelsGallery />
         </div>
       </section>
+
+      {/* About Section Last with unique animations */}
+      <div className="animate-[fadeInUp_1s_ease-out]">
+        <AboutSection />
+      </div>
 
       {/* Footer */}
       <footer className="py-12 text-center border-t border-zinc-800/50">
