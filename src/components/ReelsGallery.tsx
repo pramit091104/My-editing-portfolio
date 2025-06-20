@@ -14,14 +14,14 @@ const REELS = [
   {
     id: "b1",
     category: "business",
-    embedUrl: "https://www.instagram.com/p/YOUR_POST_ID/embed",
+    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
     title: "Business Pitch Reel",
     thumb: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "b2",
     category: "business",
-    embedUrl: "https://www.instagram.com/p/YOUR_POST_ID/embed",
+    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
     title: "Brand Promo Vertical",
     thumb: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80",
   },
@@ -29,14 +29,14 @@ const REELS = [
   {
     id: "i1",
     category: "informative",
-    embedUrl: "https://www.instagram.com/p/YOUR_POST_ID/embed",
+    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
     title: "How To: Quick Guide",
     thumb: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "i2",
     category: "informative",
-    embedUrl: "https://www.instagram.com/p/YOUR_POST_ID/embed",
+    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
     title: "5 Tips for Productivity",
     thumb: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
   },
@@ -44,14 +44,14 @@ const REELS = [
   {
     id: "c1",
     category: "creative",
-    embedUrl: "https://www.instagram.com/p/YOUR_POST_ID/embed",
+    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
     title: "Color Splash Reel",
     thumb: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "c2",
     category: "creative",
-    embedUrl: "https://www.instagram.com/p/YOUR_POST_ID/embed",
+    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
     title: "Dance With Light",
     thumb: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80",
   },
@@ -82,16 +82,15 @@ const ReelsGallery = () => {
                 width="320"
                 height="550"
                 frameBorder="0"
-                scrolling="no"
-                allowTransparency={true}
-                allow="encrypted-media"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
                 className="w-full h-full object-cover"
                 style={{ aspectRatio: "9/16" }}
                 title={reel.title}
               />
               {/* Vertical video overlay frame */}
               <div className="absolute top-3 left-3 text-primary-foreground bg-primary rounded-full px-2 py-1 text-xs flex items-center gap-2 shadow animate-scale-in z-10">
-                <Video size={18} /> Reel
+                <Video size={18} /> Short
               </div>
               {/* Hover overlay for animation */}
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" />
