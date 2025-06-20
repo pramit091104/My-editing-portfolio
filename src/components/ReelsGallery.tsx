@@ -16,14 +16,12 @@ const REELS = [
     category: "business",
     embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
     title: "Business Pitch Reel",
-    thumb: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "b2",
     category: "business",
     embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
     title: "Brand Promo Vertical",
-    thumb: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80",
   },
   // Informative
   {
@@ -31,14 +29,12 @@ const REELS = [
     category: "informative",
     embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
     title: "How To: Quick Guide",
-    thumb: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "i2",
     category: "informative",
     embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
     title: "5 Tips for Productivity",
-    thumb: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
   },
   // Creative
   {
@@ -46,14 +42,19 @@ const REELS = [
     category: "creative",
     embedUrl: "https://www.youtube.com/embed/tFGF0ByR8HY",
     title: "Color Splash Reel",
-    thumb: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80",
   },
   {
     id: "c2",
     category: "creative",
     embedUrl: "https://www.youtube.com/embed/N-gfUtjgqY8",
     title: "Dance With Light",
-    thumb: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80",
+  },
+
+  {
+    id: "c3",
+    category: "creative",
+    embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
+    title: "Color Splash Reel",
   },
 ];
 
