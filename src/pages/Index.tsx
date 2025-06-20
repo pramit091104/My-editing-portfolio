@@ -13,7 +13,7 @@ const Index = () => {
       <HeroSection />
 
       {/* YouTube Gallery Section */}
-      <section className="py-20 px-4">
+      <section className="py-16 md:py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             icon={<Youtube className="text-red-500" />}
@@ -25,7 +25,7 @@ const Index = () => {
       </section>
 
       {/* Instagram Reels Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-zinc-950 to-zinc-900">
+      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-zinc-950 to-zinc-900">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             icon={<Video className="text-violet-400" />}
@@ -42,9 +42,9 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="py-12 text-center border-t border-zinc-800/50">
+      <footer className="py-8 md:py-12 text-center border-t border-zinc-800/50">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-zinc-500">
+          <p className="text-sm md:text-base text-zinc-500">
             &copy; {new Date().getFullYear()} Creative Video Portfolio. 
             <span className="text-violet-400 mx-2">•</span>
             Crafted with passion for visual storytelling.

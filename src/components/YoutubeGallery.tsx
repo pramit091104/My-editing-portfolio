@@ -35,14 +35,14 @@ const YoutubeGallery = () => (
         loop: true,
       }}
     >
-      <CarouselContent className="gap-6">
+      <CarouselContent className="gap-4 md:gap-6">
         {YOUTUBE_VIDEOS.map((video) => (
-          <CarouselItem key={video.id} className="md:basis-1/2 lg:basis-1/3">
+          <CarouselItem key={video.id} className="basis-full md:basis-1/2 lg:basis-1/3">
             <div className="group relative bg-zinc-900/50 backdrop-blur-sm rounded-2xl border border-zinc-800/50 overflow-hidden hover:border-zinc-700/50 transition-all duration-300">
               {/* YouTube Badge */}
-              <div className="absolute top-4 left-4 z-20">
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-600 text-white text-sm font-medium shadow-lg">
-                  <Youtube className="w-4 h-4" />
+              <div className="absolute top-3 md:top-4 left-3 md:left-4 z-20">
+                <div className="flex items-center gap-1 md:gap-2 px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-red-600 text-white text-xs md:text-sm font-medium shadow-lg">
+                  <Youtube className="w-3 h-3 md:w-4 md:h-4" />
                   YouTube
                 </div>
               </div>
@@ -59,11 +59,11 @@ const YoutubeGallery = () => (
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-violet-400 transition-colors">
+              <div className="p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-violet-400 transition-colors">
                   {video.title}
                 </h3>
-                <p className="text-zinc-400 leading-relaxed">
+                <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
                   {video.description}
                 </p>
               </div>
@@ -75,9 +75,9 @@ const YoutubeGallery = () => (
         ))}
       </CarouselContent>
       
-      {/* Navigation */}
-      <CarouselPrevious className="bg-zinc-900/80 border-zinc-700 hover:bg-zinc-800 text-white -left-12" />
-      <CarouselNext className="bg-zinc-900/80 border-zinc-700 hover:bg-zinc-800 text-white -right-12" />
+      {/* Navigation - Hide on mobile */}
+      <CarouselPrevious className="hidden md:flex bg-zinc-900/80 border-zinc-700 hover:bg-zinc-800 text-white -left-12" />
+      <CarouselNext className="hidden md:flex bg-zinc-900/80 border-zinc-700 hover:bg-zinc-800 text-white -right-12" />
     </Carousel>
   </div>
 );
