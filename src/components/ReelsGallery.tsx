@@ -48,7 +48,13 @@ const REELS = [
     category: "creative",
     embedUrl: "https://www.youtube.com/embed/N-gfUtjgqY8",
     title: "Dance With Light",
-    thumb: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&q=80",
+  },
+
+  {
+    id: "c3",
+    category: "creative",
+    embedUrl: "https://www.youtube.com/embed/N-gfUtjgqY8",
+    title: "Dance With Light",
   },
 ];
 
