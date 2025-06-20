@@ -10,17 +10,17 @@ import {
 
 const YOUTUBE_VIDEOS = [
   {
-    id: "dQw4w9WgXcQ",
+    id: "xjb1SzUb4rU",
     title: "Business Launch Highlights",
     description: "Transformative story-driven commercial edits.",
   },
   {
-    id: "3JZ_D3ELwOQ", 
+    id: "nWuKVOo50aY", 
     title: "Product Reveal",
     description: "Cinematic transitions and creative storytelling.",
   },
   {
-    id: "V-_O7nl0Ii0",
+    id: "64M463Dn14Q",
     title: "Informational Tutorial",
     description: "Engaging, easy-to-follow guides.",
   },
