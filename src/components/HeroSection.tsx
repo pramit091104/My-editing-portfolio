@@ -78,7 +78,7 @@ const HeroSection = () => {
               {/* Placeholder for your image - replace with actual image */}
               <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
                 <div className="text-4xl md:text-6xl lg:text-8xl text-zinc-600">
-                  <img src="./image1.jpg" alt="Pramit - Video Editor" />
+                  <img src="/image1.jpg" alt="Pramit - Video Editor" />
                 </div>
               </div>
               
