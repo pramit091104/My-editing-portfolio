@@ -4,38 +4,12 @@ import ReelCategoryTabs from "./ReelCategoryTabs";
 import { Video } from "lucide-react";
 
 const CATEGORIES = [
+  { key: "creative", label: "Creative" },
   { key: "business", label: "Business" },
   { key: "informative", label: "Informative" },
-  { key: "creative", label: "Creative" },
 ];
 
 const REELS = [
-  // Business
-  // {
-  //   id: "b1",
-  //   category: "business",
-  //   embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
-  //   title: "Business Pitch Reel",
-  // },
-  // {
-  //   id: "b2",
-  //   category: "business",
-  //   embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
-  //   title: "Brand Promo Vertical",
-  // },
-  // Informative
-  {
-    id: "i1",
-    category: "informative",
-    embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
-    title: "Info Reel",
-  },
-  {
-    id: "i2",
-    category: "informative",
-    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
-    title: "5 Tips for Productivity",
-  },
   // Creative
   {
     id: "c1",
@@ -56,10 +30,32 @@ const REELS = [
     embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
     title: "Gym Workout Edit",
   },
+  {
+    id: "i1",
+    category: "informative",
+    embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
+    title: "Info Reel",
+  },
+  // Business
+  // {
+  //   id: "b1",
+  //   category: "business",
+  //   embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
+  //   title: "Business Pitch Reel",
+  // },
+  // {
+  //   id: "b2",
+  //   category: "business",
+  //   embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
+  //   title: "Brand Promo Vertical",
+  // },
+  // Informative
+  
+  
 ];
 
 const ReelsGallery = () => {
-  const [selected, setSelected] = useState("business");
+  const [selected, setSelected] = useState("creative");
 
   const filtered = REELS.filter((r) => r.category === selected);
 

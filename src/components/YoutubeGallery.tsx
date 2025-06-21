@@ -11,17 +11,17 @@ import {
 const YOUTUBE_VIDEOS = [
   {
     id: "xjb1SzUb4rU",
-    title: "Business Launch Highlights",
-    description: "Transformative story-driven commercial edits.",
+    title: "Sport Promo Edit",
+    description: "Sport Promo",
   },
   {
     id: "nWuKVOo50aY", 
-    title: "Product Reveal",
+    title: "Model/Fashion Edit ",
     description: "Cinematic transitions and creative storytelling.",
   },
   {
     id: "64M463Dn14Q",
-    title: "Informational Tutorial",
+    title: "After Movie Edit",
     description: "Engaging, easy-to-follow guides.",
   },
 ];

@@ -58,7 +58,7 @@ export default function AboutSection() {
           <div className="space-y-6 md:space-y-8 animate-[slideInLeft_1s_ease-out_0.3s_both]">
             {/* Introduction */}
             <div className="bg-zinc-900/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-zinc-800/50 transform transition-all duration-500 hover:bg-zinc-900/80 hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/10">
-              <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">Creative Editor</h3>
+              <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">Myself</h3>
               <p className="text-zinc-300 text-base md:text-lg leading-relaxed mb-6">
                 Over <span className="text-violet-400 font-semibold">2.5+ years</span> of experience creating 
                 compelling visual stories that <span className="text-purple-400 font-semibold">resonate with audiences</span>. 
@@ -67,7 +67,7 @@ export default function AboutSection() {
               
               {/* Software with staggered hover effects */}
               <div className="space-y-3">
-                <h4 className="text-base md:text-lg font-medium text-zinc-200">Tools & Software</h4>
+                <h4 className="text-base md:text-lg font-medium text-zinc-200">Softwares I Use</h4>
                 <div className="flex flex-wrap gap-2 md:gap-3">
                   {software.map((sw, index) => (
                     <div 
@@ -88,7 +88,7 @@ export default function AboutSection() {
             {/* Skills with animated bullets */}
             <div className="bg-zinc-900/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-zinc-800/50 transform transition-all duration-500 hover:bg-zinc-900/80 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/10">
               <h3 className="text-lg md:text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                Skills <span className="text-yellow-400 animate-pulse">⚡</span>
+                My Skills <span className="text-yellow-400 animate-pulse">⚡</span>
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {skills.map((skill, index) => (
@@ -115,7 +115,7 @@ export default function AboutSection() {
               <div className="space-y-6">
                 <div className="relative pl-6 md:pl-8 border-l-2 border-violet-400/30 animate-[drawLine_1.5s_ease-out_1.5s_both]">
                   <div className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-violet-400 animate-[popIn_0.6s_ease-out_1.8s_both]" />
-                  <div className="text-xs md:text-sm text-violet-400 font-semibold mb-1">2024-2025</div>
+                  <div className="text-xs md:text-sm text-violet-400 font-semibold mb-1">2024-2025 (present)</div>
                   <p className="text-zinc-300 text-sm md:text-base">
                     Edited reels and music videos for clients, created personal short films, 
                     expanding creative portfolio and professional experience.
@@ -137,7 +137,7 @@ export default function AboutSection() {
               {/* Hobbies */}
               <div className="bg-zinc-900/60 backdrop-blur-md rounded-2xl p-6 border border-zinc-800/50 transform transition-all duration-500 hover:bg-zinc-900/80 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/10">
                 <h3 className="text-base md:text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  Interests <span className="text-pink-400 animate-spin-slow">🎨</span>
+                  My Interests <span className="text-pink-400 animate-spin-slow">🎨</span>
                 </h3>
                 <div className="grid grid-cols-1 gap-2">
                   {hobbies.map((hobby, index) => (
