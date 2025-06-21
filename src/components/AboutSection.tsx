@@ -167,7 +167,7 @@ export default function AboutSection() {
                     <span className="break-all">pramit.0904@gmail.com</span>
                   </a>
                   <a 
-                    href="https://instagram.com/editverse_x" 
+                    href="https://instagram.com/_editverse_x" 
                     target="_blank" 
                     rel="noopener"
                     className="flex items-center gap-3 text-zinc-300 hover:text-pink-400 transition-all duration-300 group transform hover:translate-x-2 text-sm md:text-base"

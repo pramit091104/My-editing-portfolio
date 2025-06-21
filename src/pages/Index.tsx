@@ -16,8 +16,8 @@ const Index = () => {
       <section className="py-16 md:py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <SectionTitle
-            icon={<Youtube className="text-red-500" />}
-            title="YouTube Portfolio"
+            // icon={<Youtube className="text-red-500" />}
+            title="Long Videos"
             subtitle="Featured video edits showcasing creative storytelling and professional production quality."
           />
           <YoutubeGallery />
@@ -29,7 +29,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <SectionTitle
             icon={<Video className="text-violet-400" />}
-            title="Reels & Shorts"
+            title="Vertical Content"
             subtitle="Vertical format content designed for maximum engagement across social platforms."
           />
           <ReelsGallery />

@@ -11,24 +11,24 @@ const CATEGORIES = [
 
 const REELS = [
   // Business
-  {
-    id: "b1",
-    category: "business",
-    embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
-    title: "Business Pitch Reel",
-  },
-  {
-    id: "b2",
-    category: "business",
-    embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
-    title: "Brand Promo Vertical",
-  },
+  // {
+  //   id: "b1",
+  //   category: "business",
+  //   embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
+  //   title: "Business Pitch Reel",
+  // },
+  // {
+  //   id: "b2",
+  //   category: "business",
+  //   embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
+  //   title: "Brand Promo Vertical",
+  // },
   // Informative
   {
     id: "i1",
     category: "informative",
     embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
-    title: "How To: Quick Guide",
+    title: "Info Reel",
   },
   {
     id: "i2",
@@ -41,20 +41,20 @@ const REELS = [
     id: "c1",
     category: "creative",
     embedUrl: "https://www.youtube.com/embed/tFGF0ByR8HY",
-    title: "Color Splash Reel",
+    title: "Model/fashion Shoot Edit",
   },
   {
     id: "c2",
     category: "creative",
     embedUrl: "https://www.youtube.com/embed/N-gfUtjgqY8",
-    title: "Dance With Light",
+    title: "Cafe Vibes Edit",
   },
 
   {
     id: "c3",
     category: "creative",
-    embedUrl: "https://www.youtube.com/embed/N-gfUtjgqY8",
-    title: "Dance With Light",
+    embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
+    title: "Gym Workout Edit",
   },
 ];
 
