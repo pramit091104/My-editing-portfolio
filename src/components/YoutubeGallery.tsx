@@ -26,7 +26,7 @@ const YOUTUBE_VIDEOS = [
 ];
 
 const YoutubeGallery = () => (
-  <div className="w-full max-w-7xl mx-auto px-4">
+  <div className="w-full max-w-6.4xl mx-auto px-4">
     <Carousel
       className="w-full"
       opts={{
