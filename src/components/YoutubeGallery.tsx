@@ -13,15 +13,23 @@ const YOUTUBE_VIDEOS = [
     title: "High-Energy Sports Promo | Dynamic Action Edit",
     description: "A fast-paced sports promo capturing the intensity and excitement of athletic competition through dynamic filming and editing.",
   },
+
   {
     id: "nWuKVOo50aY",
     title: "Fashion Team Reveal | Stylish Model Edit",
     description: "A creative team reveal video for my college’s Student Council, highlighting style and visual storytelling.",
   },
+
   {
     id: "64M463Dn14Q",
     title: "College Sports Event Aftermovie | Highlights & Memories",
     description: "An engaging aftermovie showcasing the best moments and energy from our college sports event.",
+  },
+
+  {
+    id: "cgquyjJJ6MA",
+    title: "College Farewell Event Aftermovie | Highlights & Memories",
+    description: "An engaging farewell aftermovie showcasing the best moments and memories from our college farewell event.",
   },
 ];
 
