@@ -1,4 +1,3 @@
-
 import { Youtube } from "lucide-react";
 import {
   Carousel,
@@ -11,23 +10,23 @@ import {
 const YOUTUBE_VIDEOS = [
   {
     id: "xjb1SzUb4rU",
-    title: "Sport Promo Edit",
-    description: "Sport Promo",
+    title: "High-Energy Sports Promo | Dynamic Action Edit",
+    description: "A fast-paced sports promo capturing the intensity and excitement of athletic competition through dynamic filming and editing.",
   },
   {
-    id: "nWuKVOo50aY", 
-    title: "Model/Fashion Edit ",
-    description: "Cinematic transitions and creative storytelling.",
+    id: "nWuKVOo50aY",
+    title: "Fashion Team Reveal | Stylish Model Edit",
+    description: "A creative team reveal video for my college’s Student Council, highlighting style and visual storytelling.",
   },
   {
     id: "64M463Dn14Q",
-    title: "After Movie Edit",
-    description: "Engaging, easy-to-follow guides.",
+    title: "College Sports Event Aftermovie | Highlights & Memories",
+    description: "An engaging aftermovie showcasing the best moments and energy from our college sports event.",
   },
 ];
 
 const YoutubeGallery = () => (
-  <div className="w-full max-w-5xl mx-auto px-4">
+  <div className="w-full max-w-7xl mx-auto px-4">
     <Carousel
       className="w-full"
       opts={{
