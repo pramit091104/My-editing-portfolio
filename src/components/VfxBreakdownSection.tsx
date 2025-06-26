@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import SectionTitle from "./SectionTitle";
-import { Zap, Play, ExternalLink } from "lucide-react";
+import { Zap, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const VFX_BREAKDOWNS = [
@@ -44,8 +44,6 @@ const VFX_BREAKDOWNS = [
 ];
 
 const VfxBreakdownSection = () => {
-  const [activeBreakdown, setActiveBreakdown] = useState<string | null>(null);
-
   const handleViewFullVideo = (url: string) => {
     window.open(url, '_blank');
   };
@@ -73,23 +71,10 @@ const VfxBreakdownSection = () => {
                 </div>
               </div>
 
-              {/* Before/After Toggle */}
-              <div className="absolute top-3 md:top-4 right-3 md:right-4 z-20">
-                <button
-                  onClick={() => setActiveBreakdown(
-                    activeBreakdown === breakdown.id ? null : breakdown.id
-                  )}
-                  className="flex items-center gap-1 md:gap-2 px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-violet-600 hover:bg-violet-700 text-white text-xs md:text-sm font-medium transition-colors"
-                >
-                  <Play className="w-3 h-3 md:w-4 md:h-4" />
-                  {activeBreakdown === breakdown.id ? 'After' : 'Before'}
-                </button>
-              </div>
-
               {/* Video Container */}
               <div className="relative bg-zinc-950 aspect-video overflow-hidden">
                 <iframe
-                  src={activeBreakdown === breakdown.id ? breakdown.afterUrl : breakdown.beforeUrl}
+                  src={breakdown.afterUrl}
                   title={breakdown.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                   allowFullScreen
@@ -127,7 +112,7 @@ const VfxBreakdownSection = () => {
         {/* Instructions */}
         <div className="mt-8 text-center">
           <p className="text-sm md:text-base text-zinc-500 max-w-2xl mx-auto">
-            Click the "Before" button on each breakdown to toggle between the original footage and the final edited result. Use "View Full Video" to watch the complete breakdown on YouTube.
+            Watch VFX breakdowns showcasing professional video editing techniques. Use "View Full Video" to watch the complete breakdown on YouTube.
           </p>
         </div>
       </div>
