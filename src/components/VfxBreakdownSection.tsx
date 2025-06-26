@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import SectionTitle from "./SectionTitle";
-import { Zap, Play } from "lucide-react";
+import { Zap, Play, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const VFX_BREAKDOWNS = [
   {
@@ -10,6 +11,7 @@ const VFX_BREAKDOWNS = [
     description: "Green screen removal and background replacement",
     beforeUrl: "https://www.youtube.com/embed/YOUR_BEFORE_VIDEO_ID",
     afterUrl: "https://www.youtube.com/embed/YOUR_AFTER_VIDEO_ID",
+    fullVideoUrl: "https://www.youtube.com/watch?v=YOUR_FULL_VIDEO_ID",
     category: "Compositing"
   },
   {
@@ -18,6 +20,7 @@ const VFX_BREAKDOWNS = [
     description: "Animated text and graphic elements integration",
     beforeUrl: "https://www.youtube.com/embed/YOUR_BEFORE_VIDEO_ID_2",
     afterUrl: "https://www.youtube.com/embed/YOUR_AFTER_VIDEO_ID_2",
+    fullVideoUrl: "https://www.youtube.com/watch?v=YOUR_FULL_VIDEO_ID_2",
     category: "Motion Graphics"
   },
   {
@@ -26,6 +29,7 @@ const VFX_BREAKDOWNS = [
     description: "Raw footage to cinematic color transformation",
     beforeUrl: "https://www.youtube.com/embed/YOUR_BEFORE_VIDEO_ID_3", 
     afterUrl: "https://www.youtube.com/embed/YOUR_AFTER_VIDEO_ID_3",
+    fullVideoUrl: "https://www.youtube.com/watch?v=YOUR_FULL_VIDEO_ID_3",
     category: "Color Grading"
   },
   {
@@ -33,13 +37,18 @@ const VFX_BREAKDOWNS = [
     title: "Visual Effects Integration",
     description: "Adding digital effects to live action footage",
     beforeUrl: "https://www.youtube.com/embed/YOUR_BEFORE_VIDEO_ID_4",
-    afterUrl: "https://www.youtube.com/embed/YOUR_AFTER_VIDEO_ID_4", 
+    afterUrl: "https://www.youtube.com/embed/YOUR_AFTER_VIDEO_ID_4",
+    fullVideoUrl: "https://www.youtube.com/watch?v=YOUR_FULL_VIDEO_ID_4",
     category: "VFX"
   }
 ];
 
 const VfxBreakdownSection = () => {
   const [activeBreakdown, setActiveBreakdown] = useState<string | null>(null);
+
+  const handleViewFullVideo = (url: string) => {
+    window.open(url, '_blank');
+  };
 
   return (
     <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-zinc-900 to-zinc-950">
@@ -93,9 +102,20 @@ const VfxBreakdownSection = () => {
                 <h3 className="text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors">
                   {breakdown.title}
                 </h3>
-                <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+                <p className="text-sm md:text-base text-zinc-400 leading-relaxed mb-4">
                   {breakdown.description}
                 </p>
+                
+                {/* View Full Video Button */}
+                <Button
+                  onClick={() => handleViewFullVideo(breakdown.fullVideoUrl)}
+                  variant="outline"
+                  size="sm"
+                  className="bg-transparent border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/10 hover:border-yellow-500/50 transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  View Full Video
+                </Button>
               </div>
 
               {/* Hover Effect */}
@@ -107,7 +127,7 @@ const VfxBreakdownSection = () => {
         {/* Instructions */}
         <div className="mt-8 text-center">
           <p className="text-sm md:text-base text-zinc-500 max-w-2xl mx-auto">
-            Click the "Before" button on each breakdown to toggle between the original footage and the final edited result
+            Click the "Before" button on each breakdown to toggle between the original footage and the final edited result. Use "View Full Video" to watch the complete breakdown on YouTube.
           </p>
         </div>
       </div>
