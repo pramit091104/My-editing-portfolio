@@ -23,13 +23,13 @@ const REELS = [
     embedUrl: "https://www.youtube.com/embed/N-gfUtjgqY8",
     title: "Cafe Vibes Edit",
   },
-
   {
     id: "c3",
     category: "creative",
     embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
     title: "Gym Workout Edit",
   },
+
   {
     id: "i1",
     category: "informative",
