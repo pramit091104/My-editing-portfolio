@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import SectionTitle from "@/components/SectionTitle";
 import YoutubeGallery from "@/components/YoutubeGallery";
 import ReelsGallery from "@/components/ReelsGallery";
+import VfxBreakdownSection from "@/components/VfxBreakdownSection";
 import { Youtube, Video } from "lucide-react";
 import AboutSection from "@/components/AboutSection";
 
@@ -35,6 +36,9 @@ const Index = () => {
           <ReelsGallery />
         </div>
       </section>
+
+      {/* VFX Breakdown Section */}
+      <VfxBreakdownSection />
 
       {/* About Section Last with unique animations */}
       <div className="animate-[fadeInUp_1s_ease-out]">
