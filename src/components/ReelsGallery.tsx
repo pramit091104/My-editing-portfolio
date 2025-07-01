@@ -34,6 +34,13 @@ const REELS = [
     embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
     title: "Info Reel",
   },
+
+  {
+    id: "i1",
+    category: "informative",
+    embedUrl: "https://www.youtube.com/embed/AfCR6ZxCA_c",
+    title: "Info Reel",
+  },
   // Business
   // {
   //   id: "b1",
