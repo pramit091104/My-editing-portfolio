@@ -34,7 +34,7 @@ const VfxBreakdownSection = () => {
         {VFX_BREAKDOWNS.map((breakdown, idx) => (
           <div
             key={breakdown.id}
-            className="w-full max-w-[320px] h-[400px] md:h-[500px] lg:h-[550px]"
+            className="group w-full max-w-[320px] h-[400px] md:h-[500px] lg:h-[550px] transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-1 rounded-xl overflow-hidden"
             style={{ animationDelay: `${50 * idx}ms` }}
           >
             <iframe

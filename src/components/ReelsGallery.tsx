@@ -68,28 +68,20 @@ const ReelsGallery = () => {
         {filtered.map((reel, idx) => (
           <div
             key={reel.id}
-            className={`group relative rounded-3xl shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300 animate-fade-in`}
+            className="w-full max-w-[320px] h-[400px] md:h-[500px] lg:h-[550px] transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-1 rounded-xl overflow-hidden"
             style={{ animationDelay: `${50 * idx}ms` }}
           >
-            <div className="relative rounded-2xl overflow-hidden w-full max-w-[320px] h-[400px] md:h-[500px] lg:h-[550px] shadow-md bg-black">
-              <iframe
-                src={reel.embedUrl}
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full object-cover"
-                style={{ aspectRatio: "9/16" }}
-                title={reel.title}
-              />
-              {/* Vertical video overlay frame */}
-              <div className="absolute top-3 left-3 text-primary-foreground bg-primary rounded-full px-2 py-1 text-xs flex items-center gap-2 shadow animate-scale-in z-10">
-                <Video size={16} /> Short
-              </div>
-              {/* Hover overlay for animation */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" />
-            </div>
+            <iframe
+              src={reel.embedUrl}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full object-cover"
+              style={{ aspectRatio: "9/16" }}
+              title={reel.title}
+            />
           </div>
         ))}
       </div>
