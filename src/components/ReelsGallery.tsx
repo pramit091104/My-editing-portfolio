@@ -1,11 +1,9 @@
-
 import { useState } from "react";
 import ReelCategoryTabs from "./ReelCategoryTabs";
 import { Video } from "lucide-react";
 
 const CATEGORIES = [
   { key: "creative", label: "Creative" },
-  { key: "business", label: "Business" },
   { key: "informative", label: "Informative" },
 ];
 
@@ -66,11 +64,11 @@ const ReelsGallery = () => {
         onChange={setSelected}
         categories={CATEGORIES}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 w-full max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 w-full max-w-7xl">
         {filtered.map((reel, idx) => (
           <div
             key={reel.id}
-            className={`flex flex-col items-center bg-gradient-to-b from-white to-slate-50 rounded-3xl shadow-2xl border border-zinc-200 p-3 hover:scale-105 hover:shadow-primary transition-transform duration-300 relative group animate-fade-in`}
+            className={`group relative rounded-3xl shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300 animate-fade-in`}
             style={{ animationDelay: `${50 * idx}ms` }}
           >
             <div className="relative rounded-2xl overflow-hidden w-full max-w-[320px] h-[400px] md:h-[500px] lg:h-[550px] shadow-md bg-black">
@@ -92,7 +90,6 @@ const ReelsGallery = () => {
               {/* Hover overlay for animation */}
               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10" />
             </div>
-            <div className="mt-3 md:mt-4 text-base md:text-lg font-semibold text-zinc-900 text-center px-2">{reel.title}</div>
           </div>
         ))}
       </div>

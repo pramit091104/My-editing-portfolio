@@ -1,4 +1,3 @@
-
 import { Video, Download, Mail } from "lucide-react";
 
 const HeroSection = () => {
@@ -14,7 +13,7 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-full bg-zinc-900/70 border border-zinc-800/50 backdrop-blur-md mb-6 md:mb-8 animate-[fadeInUp_0.8s_ease-out]">
             <Video className="w-4 h-4 md:w-5 md:h-5 text-violet-400" />
-            <span className="text-sm md:text-base text-zinc-300 font-medium">Video Editor & Storyteller</span>
+            <span className="text-sm md:text-base text-zinc-300 font-medium">Video Editor | Cinematographer | Videographer</span>
           </div>
 
           {/* Main Heading */}
@@ -103,6 +102,9 @@ const HeroSection = () => {
           <div className="w-1 h-2 md:h-3 bg-violet-400 rounded-full mt-1 md:mt-2 animate-pulse"></div>
         </div>
       </div>
+
+      {/* Bottom gradient for blending */}
+      <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-24 md:h-32 lg:h-40 bg-gradient-to-b from-transparent to-zinc-950 z-20" />
     </section>
   );
 };

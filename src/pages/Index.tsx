@@ -1,4 +1,3 @@
-
 import HeroSection from "@/components/HeroSection";
 import SectionTitle from "@/components/SectionTitle";
 import YoutubeGallery from "@/components/YoutubeGallery";
@@ -12,6 +11,11 @@ const Index = () => {
     <main className="min-h-screen w-full bg-zinc-950 text-zinc-100">
       {/* Hero Section First */}
       <HeroSection />
+      
+      {/* VFX Breakdown Section */}
+      <div id="portfolio">
+        <VfxBreakdownSection />
+      </div>
 
       {/* YouTube Gallery Section */}
       <section className="py-16 md:py-20 px-4">
@@ -37,8 +41,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* VFX Breakdown Section */}
-      <VfxBreakdownSection />
+      
 
       {/* About Section Last with unique animations */}
       <div className="animate-[fadeInUp_1s_ease-out]">

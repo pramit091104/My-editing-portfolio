@@ -11,39 +11,20 @@ import {
 const YOUTUBE_VIDEOS = [
   {
     id: "xjb1SzUb4rU",
-    title: "High-Energy Sports Promo | Dynamic Action Edit",
-    description: "A fast-paced sports promo capturing the intensity and excitement of athletic competition through dynamic filming and editing.",
   },
 
   {
     id: "nWuKVOo50aY",
-    title: "Fashion Team Reveal | Stylish Model Edit",
-    description: "A creative team reveal video for my college's Student Council, highlighting style and visual storytelling.",
   },
 
   {
     id: "64M463Dn14Q",
-    title: "College Sports Event Aftermovie | Highlights & Memories",
-    description: "An engaging aftermovie showcasing the best moments and energy from our college sports event.",
   },
 
   {
     id: "cgquyjJJ6MA",
-    title: "College Farewell Event Aftermovie | Highlights & Memories",
-    description: "An engaging farewell aftermovie showcasing the best moments and memories from our college farewell event.",
   },
-  {
-    id: "xjb1SzUb4rU",
-    title: "High-Energy Sports Promo | Dynamic Action Edit",
-    description: "A fast-paced sports promo capturing the intensity and excitement of athletic competition through dynamic filming and editing.",
-  },
-
-  {
-    id: "nWuKVOo50aY",
-    title: "Fashion Team Reveal | Stylish Model Edit",
-    description: "A creative team reveal video for my college's Student Council, highlighting style and visual storytelling.",
-  },
-
+  
   
 ];
 
@@ -89,15 +70,7 @@ const YoutubeGallery = () => (
                     />
                   </AspectRatio>
 
-                  {/* Content */}
-                  <div className="p-4 md:p-6">
-                    <h3 className="text-lg md:text-xl font-semibold text-white mb-2 group-hover:text-violet-400 transition-colors">
-                      {video.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-                      {video.description}
-                    </p>
-                  </div>
+                  {/* Content removed for minimal look */}
 
                   {/* Hover Effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-violet-600/0 to-purple-600/0 group-hover:from-violet-600/5 group-hover:to-purple-600/5 transition-all duration-300 pointer-events-none" />
