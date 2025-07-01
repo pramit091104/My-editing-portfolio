@@ -10,20 +10,7 @@ const VFX_BREAKDOWNS = [
     fullVideoUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1",
     category: "Compositing"
   },
-  {
-    id: "vfx2", 
-    
-    videoUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID_2",
-    fullVideoUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2",
-    category: "Motion Graphics"
-  },
-  {
-    id: "vfx3",
-   
-    videoUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID_3", 
-    fullVideoUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3",
-    category: "Color Grading"
-  },
+  
 ];
 
 const VfxBreakdownSection = () => {
