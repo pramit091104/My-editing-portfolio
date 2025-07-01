@@ -43,6 +43,26 @@ const Index = () => {
       <div className="flex-1 ml-0 lg:ml-40">
       {/* Hero Section First */}
       <HeroSection />
+
+      {/* Latest Content Section */}
+      <section id="latest" className="py-10 md:py-16 px-4 flex flex-col items-center">
+        <div className="max-w-2xl w-full mx-auto">
+          <SectionTitle
+            title="Latest Content"
+            subtitle="Check out my most recent video upload."
+          />
+          <div className="w-full aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg mt-6">
+            <iframe
+              src="https://www.youtube.com/embed/gKrMW3Ci60o"
+              title="Latest Content"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
       
       {/* VFX Breakdown Section */}
       <div id="portfolio">
