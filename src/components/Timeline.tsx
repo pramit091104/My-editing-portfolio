@@ -12,6 +12,16 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ sections, activeSection }) => {
+  // Scroll to section smoothly
+  const handleClick = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      window.scrollTo({
+        top: el.getBoundingClientRect().top + window.scrollY - 80, // offset for fixed nav
+        behavior: 'smooth',
+      });
+    }
+  };
   return (
     <>
       {/* Vertical timeline for desktop */}
@@ -19,8 +29,15 @@ const Timeline: React.FC<TimelineProps> = ({ sections, activeSection }) => {
         <div className="flex flex-col items-center h-full justify-between">
           {sections.map((section, idx) => (
             <div key={section.id} className="flex flex-col items-center">
-              <span className={`mb-1 text-[11px] font-light tracking-wide ${activeSection === section.id ? 'text-white' : 'text-zinc-500'} transition-colors`}>{section.label}</span>
-              <div className={`w-2 h-2 rounded-full ${activeSection === section.id ? section.color : 'bg-zinc-600'} transition-all duration-300`}></div>
+              <button
+                type="button"
+                onClick={() => handleClick(section.id)}
+                className="focus:outline-none bg-transparent border-0 p-0 flex flex-col items-center group"
+                aria-label={`Go to ${section.label}`}
+              >
+                <span className={`mb-1 text-[11px] font-light tracking-wide ${activeSection === section.id ? 'text-white' : 'text-zinc-500'} transition-colors group-hover:underline`}>{section.label}</span>
+                <div className={`w-2 h-2 rounded-full ${activeSection === section.id ? section.color : 'bg-zinc-600'} transition-all duration-300 group-hover:scale-125`}></div>
+              </button>
               {idx < sections.length - 1 && (
                 <div className="w-px h-8 bg-zinc-700/40"></div>
               )}
@@ -33,8 +50,15 @@ const Timeline: React.FC<TimelineProps> = ({ sections, activeSection }) => {
         <div className="flex flex-row items-center w-full max-w-xl justify-between mx-auto">
           {sections.map((section, idx) => (
             <div key={section.id} className="flex flex-col items-center flex-1">
-              <div className={`w-2 h-2 rounded-full mb-1 ${activeSection === section.id ? section.color : 'bg-zinc-600'} transition-all duration-300`}></div>
-              <span className={`text-[10px] font-light tracking-wide ${activeSection === section.id ? 'text-white' : 'text-zinc-500'} transition-colors whitespace-nowrap`}>{section.label}</span>
+              <button
+                type="button"
+                onClick={() => handleClick(section.id)}
+                className="focus:outline-none bg-transparent border-0 p-0 flex flex-col items-center group"
+                aria-label={`Go to ${section.label}`}
+              >
+                <div className={`w-2 h-2 rounded-full mb-1 ${activeSection === section.id ? section.color : 'bg-zinc-600'} transition-all duration-300 group-hover:scale-125`}></div>
+                <span className={`text-[10px] font-light tracking-wide ${activeSection === section.id ? 'text-white' : 'text-zinc-500'} transition-colors whitespace-nowrap group-hover:underline`}>{section.label}</span>
+              </button>
               {idx < sections.length - 1 && (
                 <div className="hidden sm:block w-full h-px bg-zinc-700/40 mt-1"></div>
               )}
