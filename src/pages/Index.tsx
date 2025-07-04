@@ -17,8 +17,8 @@ const SECTIONS = [
 
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
-  { id: "longform", label: "Long Form Content" },
-  { id: "vertical", label: "Vertical Content" },
+  { id: "longform", label: "Long Form" },
+  { id: "vertical", label: "Short/Vertical" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -44,6 +44,7 @@ const handleNavClick = (id: string) => {
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState(SECTIONS[0].id);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,27 +70,38 @@ const Index = () => {
       {/* Top Navigation Bar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-3 md:py-4 gap-2 md:gap-0">
         {/* Brand name */}
-        <div className="text-3xl md:text-5xl font-blank-script text-white mb-2 md:mb-0">editverse</div>
-        {/* Center nav links */}
-        <div className="flex flex-col md:flex-row w-full md:w-auto justify-center gap-4 md:gap-10 items-center">
+        <div className="flex w-full items-center justify-between md:justify-start">
+          <div className="text-3xl md:text-5xl font-blank-script text-white mb-2 md:mb-0">editverse</div>
+          {/* Hamburger menu icon for mobile */}
+          <button
+            className="md:hidden p-2 focus:outline-none"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label="Open menu"
+          >
+            <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
+        {/* Center nav links and contact button, hidden on mobile unless menuOpen */}
+        <div className={`flex-col md:flex md:flex-row w-full md:w-auto justify-center gap-4 md:gap-10 items-center ${menuOpen ? 'flex' : 'hidden'} md:flex`}>
           {NAV_ITEMS.filter(item => item.id !== "contact").map((item) => (
             <button
               key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              onClick={() => { handleNavClick(item.id); setMenuOpen(false); }}
               className="text-zinc-100 hover:text-violet-400 transition-colors font-mono text-base md:text-lg tracking-wide focus:outline-none"
               style={{ background: 'none', border: 'none' }}
             >
               {item.label}
             </button>
           ))}
+          <button
+            onClick={() => { handleNavClick("contact"); setMenuOpen(false); }}
+            className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none mt-2 md:mt-0"
+          >
+            CONTACT
+          </button>
         </div>
-        {/* Contact button */}
-        <button
-          onClick={() => handleNavClick("contact")}
-          className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none mt-2 md:mt-0"
-        >
-          CONTACT
-        </button>
       </nav>
       
       <main className="min-h-screen w-full bg-zinc-950 text-zinc-100 flex">
