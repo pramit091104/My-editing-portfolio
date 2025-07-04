@@ -39,18 +39,18 @@ const software = [
 export default function AboutSection() {
   const [ref, inView] = useInView({ threshold: 0.2 });
   return (
-    <section ref={ref} className="relative w-full py-16 md:py-20 px-4">
-      <div className="relative max-w-3xl mx-auto flex flex-col gap-8">
+    <section ref={ref} className="relative w-full py-10 md:py-16 lg:py-20 px-2 sm:px-4">
+      <div className="relative max-w-3xl mx-auto flex flex-col gap-6 md:gap-8">
         {/* Header */}
-        <div className={`text-center mb-12 md:mb-16 ${inView ? 'blur-fade-up-posterize' : ''}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 tracking-wide">
+        <div className={`text-center mb-8 md:mb-12 lg:mb-16 ${inView ? 'blur-fade-up-posterize' : ''}`}>
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-light text-white mb-4 tracking-wide">
             About <span className="font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">Me</span>
           </h2>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-violet-400 to-purple-400 mx-auto" />
+          <div className="w-16 md:w-24 h-0.5 bg-gradient-to-r from-violet-400 to-purple-400 mx-auto" />
         </div>
 
         {/* Main Content (single column, no card backgrounds) */}
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           {/* Introduction */}
           <div className={inView ? 'blur-fade-up-posterize' : ''}>
             <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">Myself</h3>

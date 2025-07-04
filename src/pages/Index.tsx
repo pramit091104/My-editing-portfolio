@@ -67,16 +67,16 @@ const Index = () => {
   return (
     <>
       {/* Top Navigation Bar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex items-center justify-between px-10 py-4">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-3 md:py-4 gap-2 md:gap-0">
         {/* Brand name */}
-        <div className="text-5xl font-blank-script text-white">editverse</div>
+        <div className="text-3xl md:text-5xl font-blank-script text-white mb-2 md:mb-0">editverse</div>
         {/* Center nav links */}
-        <div className="flex-1 flex justify-center gap-10">
+        <div className="flex flex-col md:flex-row w-full md:w-auto justify-center gap-4 md:gap-10 items-center">
           {NAV_ITEMS.filter(item => item.id !== "contact").map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className="text-zinc-100 hover:text-violet-400 transition-colors font-mono text-lg tracking-wide focus:outline-none"
+              className="text-zinc-100 hover:text-violet-400 transition-colors font-mono text-base md:text-lg tracking-wide focus:outline-none"
               style={{ background: 'none', border: 'none' }}
             >
               {item.label}
@@ -86,7 +86,7 @@ const Index = () => {
         {/* Contact button */}
         <button
           onClick={() => handleNavClick("contact")}
-          className="bg-white text-zinc-900 font-mono px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-base font-semibold focus:outline-none"
+          className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none mt-2 md:mt-0"
         >
           CONTACT
         </button>
