@@ -33,6 +33,13 @@ const handleNavClick = (id: string) => {
     }
     return;
   }
+  if (id === "home") {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    return;
+  }
   const el = document.getElementById(id);
   if (el) {
     window.scrollTo({
@@ -45,6 +52,7 @@ const handleNavClick = (id: string) => {
 const Index = () => {
   const [activeSection, setActiveSection] = useState(SECTIONS[0].id);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [videoPlaying, setVideoPlaying] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,13 +76,13 @@ const Index = () => {
   return (
     <>
       {/* Top Navigation Bar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-3 md:py-4 gap-2 md:gap-0">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-3 md:py-3 gap-2 md:gap-0">
         {/* Brand name */}
         <div className="flex w-full items-center justify-between md:justify-start">
-          <div className="text-3xl md:text-5xl font-blank-script text-white mb-2 md:mb-0">editverse</div>
+          <div className="text-3xl md:text-4xl font-blank-script text-white mb-2 md:mb-0">editverse</div>
           {/* Hamburger menu icon for mobile */}
           <button
-            className="md:hidden p-2 focus:outline-none"
+            className="md:hidden p-2 focus:outline-none text-white"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="Open menu"
           >
@@ -84,7 +92,7 @@ const Index = () => {
           </button>
         </div>
         {/* Center nav links and contact button, hidden on mobile unless menuOpen */}
-        <div className={`flex-col md:flex md:flex-row w-full md:w-auto justify-center gap-4 md:gap-10 items-center ${menuOpen ? 'flex' : 'hidden'} md:flex`}>
+        <div className={`flex-col md:flex md:flex-row w-full md:w-auto justify-center gap-4 md:gap-10 items-center ${menuOpen ? 'flex' : 'hidden'} md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2`}>
           {NAV_ITEMS.filter(item => item.id !== "contact").map((item) => (
             <button
               key={item.id}
@@ -95,9 +103,21 @@ const Index = () => {
               {item.label}
             </button>
           ))}
+        </div>
+        {/* Contact button positioned on the right */}
+        <div className="hidden md:block">
           <button
             onClick={() => { handleNavClick("contact"); setMenuOpen(false); }}
-            className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none mt-2 md:mt-0"
+            className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none"
+          >
+            CONTACT
+          </button>
+        </div>
+        {/* Contact button for mobile */}
+        <div className={`md:hidden ${menuOpen ? 'block' : 'hidden'}`}>
+          <button
+            onClick={() => { handleNavClick("contact"); setMenuOpen(false); }}
+            className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none mt-2"
           >
             CONTACT
           </button>
@@ -110,13 +130,9 @@ const Index = () => {
         <HeroSection />
 
         {/* Latest Content Section */}
-        <section id="latest" className="py-10 -mt-10 md:py-12 px-4 flex flex-col items-center">
-          <div className="max-w-2xl w-full mx-auto">
-            <SectionTitle
-              title="Latest Content"
-              subtitle="Check out my most recent video upload."
-            />
-            <div className="w-full aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg mt-6">
+        <section id="latest" className="py-10 -mt-10 md:py-12 px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)' }}>
+          <div className="max-w-4xl w-full mx-auto relative mt-10 md:mt-10 ">
+            <div className={`w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat transition-all duration-500 ${videoPlaying ? 'blur-sm' : ''}`} style={{ backgroundImage: 'url(/images/showreel.png)' }}>
               <iframe
                 src="https://www.youtube.com/embed/gKrMW3Ci60o"
                 title="Latest Content"
@@ -124,6 +140,17 @@ const Index = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 className="w-full h-full object-cover"
+                onLoad={() => {
+                  // Listen for video play events
+                  const iframe = document.querySelector('iframe[src*="youtube.com"]');
+                  if (iframe) {
+                    iframe.addEventListener('load', () => {
+                      // YouTube iframe API would be needed for precise play detection
+                      // For now, we'll use a simple approach
+                      setVideoPlaying(true);
+                    });
+                  }
+                }}
               />
             </div>
           </div>
