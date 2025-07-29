@@ -134,7 +134,7 @@ const Index = () => {
           <div className="max-w-4xl w-full mx-auto relative mt-10 md:mt-10 ">
             <div className={`w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat transition-all duration-500 ${videoPlaying ? 'blur-sm' : ''}`} style={{ backgroundImage: 'url(/images/showreel.png)' }}>
               <iframe
-                src="https://www.youtube.com/embed/gKrMW3Ci60o"
+                src="https://www.youtube.com/embed/Mr3LMi37T7M"
                 title="Latest Content"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
