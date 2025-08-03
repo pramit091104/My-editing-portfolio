@@ -4,6 +4,7 @@ import YoutubeGallery from "@/components/YoutubeGallery";
 import ReelsGallery from "@/components/ReelsGallery";
 import { Youtube, Video, Mail, MapPin } from "lucide-react";
 import AboutSection from "@/components/AboutSection";
+import BrandsSection from "@/components/BrandsSection";
 import Timeline from "@/components/Timeline";
 import { useEffect, useState } from "react";
 import React from "react";
@@ -155,6 +156,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Brands Section */}
+        <BrandsSection />
 
         {/* YouTube Gallery Section */}
         <section id="longform" className="py-16 md:py-20 px-4">
