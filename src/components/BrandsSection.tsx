@@ -1,11 +1,11 @@
 import React from "react";
 
 const BRANDS = [
-  { name: "Eagle boys", img: "/brands/eagleboys.jpg" },
-  { name: "The Fitness empire", img: "/brands/fitnessempire.jpg" },
-  { name: "thesoulvard", img: "/brands/thesoulvard.jpg" },
-  { name: "Meditourz", img: "/brands/meditourz.jpg" },
-  { name: "Bartisans", img: "/brands/bartisans.jpg" },
+  { name: "Eagle boys", img: "/brands/eagleboys.jpg", url: "https://www.instagram.com/eagleboys_pizzeria.loni/" },
+  { name: "The Fitness empire", img: "/brands/fitnessempire.jpg", url: "https://www.instagram.com/fitness_empire_loni_kalbhor/" },
+  { name: "thesoulvard", img: "/brands/thesoulvard.jpg", url: "https://www.instagram.com/thesoulvard/" },
+  { name: "Meditourz", img: "/brands/meditourz.jpg", url: "https://www.instagram.com/meditourz/" },
+  { name: "Bartisans", img: "/brands/bartisans.jpg", url: "https://www.instagram.com/bartisans.in/" },
 ];
 
 const BrandsSection = () => {
@@ -19,13 +19,15 @@ const BrandsSection = () => {
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {BRANDS.map((brand, idx) => (
             <div key={idx} className="flex flex-col items-center">
-              {brand.img ? (
-                <img
-                  src={brand.img}
-                  alt={brand.name}
-                  className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shadow border-2 border-zinc-800 bg-white"
-                  loading="lazy"
-                />
+              {brand.img && brand.url ? (
+                <a href={brand.url} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={brand.img}
+                    alt={brand.name}
+                    className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shadow border-2 border-zinc-800 bg-white"
+                    loading="lazy"
+                  />
+                </a>
               ) : (
                 <div className="w-28 h-14 md:w-40 md:h-20 rounded-full flex items-center justify-center bg-zinc-800 text-white text-xl font-bold shadow border-2 border-zinc-700"
                   style={{ aspectRatio: '2/1' }}>
