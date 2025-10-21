@@ -13,48 +13,48 @@ const REELS = [
   {
     id: "c1",
     category: "creative",
-    embedUrl: "https://www.youtube.com/embed/tFGF0ByR8HY",
-    title: "Model/fashion Shoot Edit",
+    embedUrl: "https://player.vimeo.com/video/1106914789",
+    title: "Model/fashion Shoot Edit (Vimeo)",
   },
   {
     id: "c2",
     category: "creative",
-    embedUrl: "https://www.youtube.com/embed/N-gfUtjgqY8",
-    title: "Cafe Vibes Edit",
+    embedUrl: "https://player.vimeo.com/video/1107158436",
+    title: "Cafe Vibes Edit (Vimeo)",
   },
   {
     id: "c3",
     category: "creative",
-    embedUrl: "https://www.youtube.com/embed/TzchRcsBEmk",
-    title: "Gym Workout Edit",
+    embedUrl: "https://player.vimeo.com/video/1107162446",
+    title: "Gym Workout Edit (Vimeo)",
   },
 
   {
     id: "i1",
     category: "informative",
-    embedUrl: "https://www.youtube.com/embed/7BSxwtG7__s",
-    title: "Info Reel",
+    embedUrl: "https://player.vimeo.com/video/1107162548",
+    title: "Info Reel (Vimeo)",
   },
 
   {
     id: "i2",
     category: "informative",
-    embedUrl: "https://www.youtube.com/embed/AfCR6ZxCA_c",
-    title: "Info Reel",
+    embedUrl: "https://player.vimeo.com/video/1106914262",
+    title: "Info Reel (Vimeo)",
   },
 
   // Events
   {
     id: "e1",
     category: "events",
-    embedUrl: "https://www.instagram.com/reel/DHKpoRgAC4H/embed/",
-    title: "Event1",
+    embedUrl: "https://player.vimeo.com/video/76979871",
+    title: "Event1 (Vimeo)",
   },
   {
     id: "e2",
     category: "events",
-    embedUrl: "https://www.instagram.com/reel/DHEcnqgAjK-/embed/",
-    title: "Event2",
+    embedUrl: "https://player.vimeo.com/video/357274789",
+    title: "Event2 (Vimeo)",
   },  
   
 ];
