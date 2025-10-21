@@ -47,7 +47,7 @@ const REELS = [
   {
     id: "e1",
     category: "events",
-    embedUrl: "https://vimeo.com/1129288199",
+    embedUrl: "https://player.vimeo.com/video/1129288199",
     title: "Event1 (Vimeo)",
   }
   // {

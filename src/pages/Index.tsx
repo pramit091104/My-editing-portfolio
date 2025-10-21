@@ -132,29 +132,30 @@ const Index = () => {
 
         {/* Latest Content Section */}
         <section id="latest" className="py-10 -mt-10 md:py-12 px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)' }}>
-          <div className="max-w-4xl w-full mx-auto relative mt-10 md:mt-10 ">
-            <div className={`w-full aspect-video rounded-xl overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat transition-all duration-500 ${videoPlaying ? 'blur-sm' : ''}`} style={{ backgroundImage: 'url(/images/showreel.png)' }}>
-              <iframe
-                src="https://vimeo.com/1129305618"
-                title="Latest Content"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full object-cover"
-                onLoad={() => {
-                  // Listen for video play events
-                  const iframe = document.querySelector('iframe[src*="youtube.com"]');
-                  if (iframe) {
-                    iframe.addEventListener('load', () => {
-                      // YouTube iframe API would be needed for precise play detection
-                      // For now, we'll use a simple approach
-                      setVideoPlaying(true);
-                    });
-                  }
-                }}
-              />
-            </div>
-          </div>
+          <div className="max-w-4xl w-full mx-auto relative mt-6 md:mt-6">
+  <div className="w-full rounded-xl overflow-hidden shadow-lg relative" style={{ height: '320px' }}>
+    {/* Blurred background layer */}
+    <img
+      src="/images/showreel.png"
+      alt="Showreel background"
+      className="absolute inset-0 w-full h-full object-cover blur-lg scale-105 z-0"
+      aria-hidden="true"
+      draggable="false"
+    />
+    {/* Video layer */}
+    <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
+      <iframe
+        src="https://player.vimeo.com/video/1129305618"
+        title="Latest Content"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full object-cover rounded-xl"
+        style={{ minHeight: 0 }}
+      />
+    </div>
+  </div>
+</div>
         </section>
 
         {/* Brands Section */}
