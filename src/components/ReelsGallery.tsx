@@ -3,28 +3,30 @@ import ReelCategoryTabs from "./ReelCategoryTabs";
 import { Video } from "lucide-react";
 
 const CATEGORIES = [
-  { key: "creative", label: "Creative" },
+  { key: "Trending", label: "Trending" },
   { key: "informative", label: "Informative" },
-  {key: "events" , label: "Events"}
+  {key: "events" , label: "Events"},
+  {key: "others" , label: "Others"}
+
 ];
 
 const REELS = [
   // Creative
   {
     id: "c1",
-    category: "creative",
-    embedUrl: "https://player.vimeo.com/video/1106914789",
+    category: "Trending",
+    embedUrl: "https://player.vimeo.com/video/1107162548",
     title: "Model/fashion Shoot Edit (Vimeo)",
   },
   {
     id: "c2",
-    category: "creative",
+    category: "Trending",
     embedUrl: "https://player.vimeo.com/video/1107158436",
     title: "Cafe Vibes Edit (Vimeo)",
   },
   {
     id: "c3",
-    category: "creative",
+    category: "Trending",
     embedUrl: "https://player.vimeo.com/video/1107162446",
     title: "Gym Workout Edit (Vimeo)",
   },
@@ -32,7 +34,7 @@ const REELS = [
   {
     id: "i1",
     category: "informative",
-    embedUrl: "https://player.vimeo.com/video/1107162548",
+    embedUrl: "https://player.vimeo.com/video/1106914925",
     title: "Info Reel (Vimeo)",
   },
 
@@ -43,19 +45,36 @@ const REELS = [
     title: "Info Reel (Vimeo)",
   },
 
+  {
+    id: "i3",
+    category: "informative",
+    embedUrl: "https://player.vimeo.com/video/1131483009",
+    title: "Info Reel (Vimeo)",
+  },
+
   // Events
   {
     id: "e1",
     category: "events",
     embedUrl: "https://player.vimeo.com/video/1129288199",
     title: "Event1 (Vimeo)",
-  }
+  },
+
   // {
-  //   // id: "e2",
-  //   // category: "events",
-  //   // // embedUrl: "https://player.vimeo.com/video/357274789",
-  //   // title: "Event2 (Vimeo)",
+  //   id: "e2",
+  //   category: "events",
+  //   embedUrl: "https://player.vimeo.com/video/1107158629",
+  //   title: "Event2 (Vimeo)",
   // },  
+  
+  //Others
+
+  {
+    id: "o1",
+    category: "others",
+    embedUrl: "https://player.vimeo.com/video/1106914506",
+    title: "Event2 (Vimeo)",
+  },
   
 ];
 
