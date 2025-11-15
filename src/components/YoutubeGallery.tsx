@@ -23,18 +23,18 @@ const YOUTUBE_VIDEOS = [
 ];
 
 const YoutubeGallery = () => (
-  <div className="w-full max-w-4xl mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="w-full max-w-4xl mx-auto px-2 sm:px-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
       {YOUTUBE_VIDEOS.map((video) => (
         <div
           key={video.id}
-          className="group relative bg-zinc-900/50 backdrop-blur-sm rounded-2xl border border-zinc-800/50 overflow-hidden hover:border-zinc-700/50 transition-all duration-300 flex flex-col"
+          className="group relative bg-zinc-900/50 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-zinc-800/50 overflow-hidden hover:border-zinc-700/50 transition-all duration-300 flex flex-col"
         >
           {/* YouTube Badge */}
-          <div className="absolute top-3 md:top-4 left-3 md:left-4 z-20">
-            <div className="flex items-center gap-1 md:gap-2 px-2 py-1 md:px-3 md:py-1.5 rounded-full bg-red-600 text-white text-xs md:text-sm font-medium shadow-lg">
-              <Youtube className="w-3 h-3 md:w-4 md:h-4" />
-              YouTube
+          <div className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 z-20">
+            <div className="flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-3 sm:py-1.5 rounded-full bg-red-600 text-white text-xs sm:text-sm font-medium shadow-lg">
+              <Youtube className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">YouTube</span>
             </div>
           </div>
 

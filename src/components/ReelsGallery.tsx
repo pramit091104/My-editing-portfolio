@@ -85,7 +85,7 @@ const REELS = [
 ];
 
 const ReelsGallery = () => {
-  const [selected, setSelected] = useState("creative");
+  const [selected, setSelected] = useState("Trending");
 
   const filtered = REELS.filter((r) => r.category === selected);
 
@@ -104,13 +104,13 @@ const ReelsGallery = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center px-4">
+    <div className="w-full flex flex-col items-center px-2 sm:px-4">
       <ReelCategoryTabs
         value={selected}
         onChange={setSelected}
         categories={CATEGORIES}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 w-full max-w-7xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full max-w-7xl justify-items-center">
         {filtered.map((reel, idx) => {
           const isInstagram = isInstagramReel(reel.embedUrl);
           
@@ -119,8 +119,8 @@ const ReelsGallery = () => {
               key={reel.id}
               className={`transition-transform duration-300 ease-out hover:scale-105 hover:-translate-y-1 rounded-xl overflow-hidden ${
                 isInstagram 
-                  ? "w-full max-w-[280px] h-[350px] md:h-[400px] lg:h-[450px]" 
-                  : "w-full max-w-[320px] h-[400px] md:h-[500px] lg:h-[550px]"
+                  ? "w-full max-w-[280px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px]" 
+                  : "w-full max-w-[320px] h-[350px] sm:h-[400px] md:h-[500px] lg:h-[550px]"
               }`}
               style={{ animationDelay: `${50 * idx}ms` }}
             >

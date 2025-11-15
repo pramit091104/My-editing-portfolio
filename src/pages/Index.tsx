@@ -77,28 +77,28 @@ const Index = () => {
   return (
     <>
       {/* Top Navigation Bar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex flex-col md:flex-row items-center justify-between px-4 md:px-8 py-3 md:py-3 gap-2 md:gap-0">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex flex-col md:flex-row items-center justify-between px-3 sm:px-4 md:px-8 py-2 sm:py-3 gap-2 md:gap-0">
         {/* Brand name */}
         <div className="flex w-full items-center justify-between md:justify-start">
-          <div className="text-3xl md:text-4xl font-blank-script text-white mb-2 md:mb-0">editverse</div>
+          <div className="text-2xl sm:text-3xl md:text-4xl font-blank-script text-white mb-0">editverse</div>
           {/* Hamburger menu icon for mobile */}
           <button
             className="md:hidden p-2 focus:outline-none text-white"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label="Open menu"
           >
-            <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M4 6h16M4 12h16M4 18h16" strokeLinecap="round" />
             </svg>
           </button>
         </div>
         {/* Center nav links and contact button, hidden on mobile unless menuOpen */}
-        <div className={`flex-col md:flex md:flex-row w-full md:w-auto justify-center gap-4 md:gap-10 items-center ${menuOpen ? 'flex' : 'hidden'} md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2`}>
+        <div className={`flex-col md:flex md:flex-row w-full md:w-auto justify-center gap-3 sm:gap-4 md:gap-10 items-center ${menuOpen ? 'flex' : 'hidden'} md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 pb-2 md:pb-0`}>
           {NAV_ITEMS.filter(item => item.id !== "contact").map((item) => (
             <button
               key={item.id}
               onClick={() => { handleNavClick(item.id); setMenuOpen(false); }}
-              className="text-zinc-100 hover:text-violet-400 transition-colors font-mono text-base md:text-lg tracking-wide focus:outline-none"
+              className="text-zinc-100 hover:text-violet-400 transition-colors font-mono text-sm sm:text-base md:text-lg tracking-wide focus:outline-none"
               style={{ background: 'none', border: 'none' }}
             >
               {item.label}
@@ -115,10 +115,10 @@ const Index = () => {
           </button>
         </div>
         {/* Contact button for mobile */}
-        <div className={`md:hidden ${menuOpen ? 'block' : 'hidden'}`}>
+        <div className={`md:hidden w-full ${menuOpen ? 'block' : 'hidden'}`}>
           <button
             onClick={() => { handleNavClick("contact"); setMenuOpen(false); }}
-            className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none mt-2"
+            className="bg-white text-zinc-900 font-mono px-4 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm font-semibold focus:outline-none w-full"
           >
             CONTACT
           </button>
@@ -131,10 +131,10 @@ const Index = () => {
         <HeroSection />
 
         {/* Latest Content Section */}
-        <section id="latest" className="relative py-10 -mt-10 md:py-12 px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)'}}>
+        <section id="latest" className="relative py-8 sm:py-10 md:py-12 -mt-10 px-2 sm:px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)'}}>
           <div className="pointer-events-none absolute inset-0 backdrop-blur-sm" />
-          <div className="max-w-4xl w-full mx-auto relative mt-6 md:mt-6">
-  <div className="w-full rounded-xl overflow-hidden shadow-lg relative" style={{ height: '320px' }}>
+          <div className="max-w-4xl w-full mx-auto relative mt-4 sm:mt-6">
+  <div className="w-full rounded-xl overflow-hidden shadow-lg relative" style={{ height: 'clamp(200px, 50vw, 320px)' }}>
     {/* Blurred background layer */}
     <img
       src="/images/showreel.png"
@@ -163,7 +163,7 @@ const Index = () => {
         <BrandsSection />
 
         {/* YouTube Gallery Section */}
-        <section id="longform" className="py-16 md:py-20 px-4">
+        <section id="longform" className="py-12 sm:py-16 md:py-20 px-2 sm:px-4">
           <div className="max-w-7xl mx-auto">
             <SectionTitle
               // icon={<Youtube className="text-red-500" />}
@@ -175,7 +175,7 @@ const Index = () => {
         </section>
 
         {/* Instagram Reels Section */}
-        <section id="vertical" className="py-16 md:py-20 px-4 bg-gradient-to-b from-zinc-950 to-zinc-900">
+        <section id="vertical" className="py-12 sm:py-16 md:py-20 px-2 sm:px-4 bg-gradient-to-b from-zinc-950 to-zinc-900">
           <div className="max-w-7xl mx-auto">
             <SectionTitle
               icon={<Video className="text-violet-400" />}
@@ -194,19 +194,19 @@ const Index = () => {
         </div>
 
         {/* Footer */}
-        <footer className="py-8 md:py-12 text-center border-t border-zinc-800/50">
+        <footer className="py-6 sm:py-8 md:py-12 text-center border-t border-zinc-800/50">
           <div className="max-w-4xl mx-auto px-4">
             <div className="mb-4">
-              <h3 className="text-base md:text-lg font-semibold text-white mb-2">Let's Connect</h3>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-zinc-300 text-sm md:text-base">
+              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-3 sm:mb-2">Let's Connect</h3>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 text-zinc-300 text-xs sm:text-sm md:text-base">
                 <a 
                   href="mailto:pramit.0904@gmail.com" 
                   className="flex items-center gap-2 hover:text-white transition-all duration-300 group"
                 >
-                  <span className="inline-block w-6 h-6 md:w-8 md:h-8 rounded-lg bg-zinc-800 flex items-center justify-center group-hover:bg-zinc-700 group-hover:rotate-12 transition-all duration-300">
+                  <span className="inline-block w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-lg bg-zinc-800 flex items-center justify-center group-hover:bg-zinc-700 group-hover:rotate-12 transition-all duration-300">
                     <span className="text-xs">📧</span>
                   </span>
-                  <span className="break-all">pramit.0904@gmail.com</span>
+                  <span className="break-all text-xs sm:text-sm">pramit.0904@gmail.com</span>
                 </a>
                 <a 
                   href="https://instagram.com/_editverse_x" 
@@ -214,16 +214,16 @@ const Index = () => {
                   rel="noopener"
                   className="flex items-center gap-2 hover:text-pink-400 transition-all duration-300 group"
                 >
-                  <span className="inline-block w-6 h-6 md:w-8 md:h-8 rounded-lg bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center group-hover:rotate-12 transition-all duration-300">
-                    <svg className="w-3 h-3 md:w-4 md:h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 0A5.75 5.75 0 0 0 2 7.75Zm8.5 0A5.75 5.75 0 0 1 22 7.75Zm0 20A5.75 5.75 0 0 0 22 16.25Zm-8.5 0A5.75 5.75 0 0 1 2 16.25ZM8 12a4 4 0 1 0 8 0a4 4 0 0 0-8 0Zm8.5-3.25h.01v.01h-.01Z"/></svg>
+                  <span className="inline-block w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-lg bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center group-hover:rotate-12 transition-all duration-300">
+                    <svg className="w-3 h-3 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 0A5.75 5.75 0 0 0 2 7.75Zm8.5 0A5.75 5.75 0 0 1 22 7.75Zm0 20A5.75 5.75 0 0 0 22 16.25Zm-8.5 0A5.75 5.75 0 0 1 2 16.25ZM8 12a4 4 0 1 0 8 0a4 4 0 0 0-8 0Zm8.5-3.25h.01v.01h-.01Z"/></svg>
                   </span>
-                  <span>@editverse_x</span>
+                  <span className="text-xs sm:text-sm">@editverse_x</span>
                 </a>
               </div>
             </div>
-            <p className="text-sm md:text-base text-zinc-500">
+            <p className="text-xs sm:text-sm md:text-base text-zinc-500 px-2">
               &copy; {new Date().getFullYear()} Creative Video Portfolio. 
-              <span className="text-violet-400 mx-2">•</span>
+              <span className="text-violet-400 mx-1 sm:mx-2">•</span>
               Crafted with passion for visual storytelling.
             </p>
           </div>
