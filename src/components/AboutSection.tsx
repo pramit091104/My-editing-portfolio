@@ -105,7 +105,7 @@ export default function AboutSection() {
               <div className="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-violet-400/20 shadow-lg">
                 <div className="w-full h-full bg-gradient-to-br from-violet-400/20 to-purple-400/20 flex items-center justify-center">
                   <span className="text-4xl md:text-6xl text-violet-400/50">
-                    <img src="/images/image1.jpg" alt="Profile" className="w-full h-full object-cover" />
+                    <img src="/images/profilePic.jpg" alt="Profile" className="w-full h-full object-cover rounded-full scale-150 translate-y-2 md:translate-y-14" />
                   </span>
                 </div>
               </div>

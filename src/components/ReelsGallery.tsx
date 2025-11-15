@@ -34,7 +34,7 @@ const REELS = [
   {
     id: "i1",
     category: "informative",
-    embedUrl: "https://player.vimeo.com/video/1106914925",
+    embedUrl: "https://player.vimeo.com/video/1136422943",
     title: "Info Reel (Vimeo)",
   },
 
@@ -74,6 +74,12 @@ const REELS = [
     category: "others",
     embedUrl: "https://player.vimeo.com/video/1106914506",
     title: "Event2 (Vimeo)",
+  },
+  {
+    id: "o1",
+    category: "others",
+    embedUrl: "https://player.vimeo.com/video/1137131044",
+    title: "Real Estate",
   },
   
 ];

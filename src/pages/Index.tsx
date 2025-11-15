@@ -131,14 +131,15 @@ const Index = () => {
         <HeroSection />
 
         {/* Latest Content Section */}
-        <section id="latest" className="py-10 -mt-10 md:py-12 px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)' }}>
+        <section id="latest" className="relative py-10 -mt-10 md:py-12 px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)'}}>
+          <div className="pointer-events-none absolute inset-0 backdrop-blur-sm" />
           <div className="max-w-4xl w-full mx-auto relative mt-6 md:mt-6">
   <div className="w-full rounded-xl overflow-hidden shadow-lg relative" style={{ height: '320px' }}>
     {/* Blurred background layer */}
     <img
       src="/images/showreel.png"
       alt="Showreel background"
-      className="absolute inset-0 w-full h-full object-cover blur-lg scale-105 z-0"
+      className="absolute inset-0 w-full h-full object-cover blur-sm opacity-60 scale-105 z-0"
       aria-hidden="true"
       draggable="false"
     />
