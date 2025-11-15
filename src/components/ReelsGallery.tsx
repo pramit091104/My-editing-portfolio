@@ -78,7 +78,7 @@ const REELS = [
   {
     id: "o1",
     category: "others",
-    embedUrl: "https://player.vimeo.com/video/1137131044",
+    embedUrl: "https://player.vimeo.com/video/1137153617",
     title: "Real Estate",
   },
   

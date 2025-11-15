@@ -1,54 +1,54 @@
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import BrandsSection from "@/components/BrandsSection";
 import Navigation from "@/components/Navigation";
+import SectionTitle from "@/components/SectionTitle";
+import YoutubeGallery from "@/components/YoutubeGallery";
+import ReelsGallery from "@/components/ReelsGallery";
+import { Youtube, Video } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const Index = () => {
+const Portfolio = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate("/");
+    setTimeout(() => {
+      const el = document.getElementById("contact");
+      if (el) {
+        window.scrollTo({
+          top: el.getBoundingClientRect().top + window.scrollY - 80,
+          behavior: "smooth",
+        });
+      }
+    }, 100);
+  };
 
   return (
     <>
       <Navigation />
-      <main className="min-h-screen w-full bg-zinc-950 text-zinc-100 flex">
-        <div className="flex-1 ml-0 lg:ml-0">
-        {/* Hero Section First */}
-        <HeroSection />
-
-        {/* Latest Content Section */}
-        <section id="latest" className="relative py-8 sm:py-10 md:py-12 -mt-10 px-2 sm:px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)'}}>
-          <div className="pointer-events-none absolute inset-0 backdrop-blur-sm" />
-          <div className="max-w-4xl w-full mx-auto relative mt-4 sm:mt-6">
-  <div className="w-full rounded-xl overflow-hidden shadow-lg relative" style={{ height: 'clamp(200px, 50vw, 320px)' }}>
-    {/* Blurred background layer */}
-    <img
-      src="/images/showreel.png"
-      alt="Showreel background"
-      className="absolute inset-0 w-full h-full object-cover blur-sm opacity-60 scale-105 z-0"
-      aria-hidden="true"
-      draggable="false"
-    />
-    {/* Video layer */}
-    <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
-      <iframe
-        src="https://player.vimeo.com/video/1129305618"
-        title="Latest Content"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        className="w-full h-full object-cover rounded-xl"
-        style={{ minHeight: 0 }}
-      />
-    </div>
-  </div>
-</div>
+      <main className="min-h-screen w-full bg-zinc-950 text-zinc-100 pt-20 sm:pt-24">
+        {/* YouTube Gallery Section */}
+        <section className="py-12 sm:py-16 md:py-20 px-2 sm:px-4">
+          <div className="max-w-7xl mx-auto">
+            <SectionTitle
+              icon={<Youtube className="text-red-500" />}
+              title="Long Videos"
+              subtitle="Featured video edits showcasing creative storytelling and professional production quality."
+            />
+            <YoutubeGallery />
+          </div>
         </section>
 
-        {/* Brands Section */}
-        <BrandsSection />
-
-        {/* About Section Last with unique animations */}
-        <div id="about" className="animate-[fadeInUp_1s_ease-out]">
-          <AboutSection />
-        </div>
+        {/* Instagram Reels Section */}
+        <section className="py-12 sm:py-16 md:py-20 px-2 sm:px-4 bg-gradient-to-b from-zinc-950 to-zinc-900">
+          <div className="max-w-7xl mx-auto">
+            <SectionTitle
+              icon={<Video className="text-violet-400" />}
+              title="Vertical Content"
+              subtitle="Vertical format content designed for maximum engagement across social platforms."
+            />
+            <ReelsGallery />
+          </div>
+        </section>
 
         {/* Footer */}
         <footer id="contact" className="py-6 sm:py-8 md:py-12 border-t border-zinc-800/50">
@@ -72,16 +72,7 @@ const Index = () => {
                   </a>
                   <a 
                     href="#contact" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const el = document.getElementById("contact");
-                      if (el) {
-                        window.scrollTo({
-                          top: el.getBoundingClientRect().top + window.scrollY - 80,
-                          behavior: "smooth",
-                        });
-                      }
-                    }}
+                    onClick={handleContactClick}
                     className="hover:text-violet-400 transition-colors"
                   >
                     Contact
@@ -123,10 +114,10 @@ const Index = () => {
             </p>
           </div>
         </footer>
-        </div>
       </main>
     </>
   );
 };
 
-export default Index;
+export default Portfolio;
+
