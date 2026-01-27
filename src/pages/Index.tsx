@@ -29,7 +29,7 @@ const Index = () => {
     {/* Video layer */}
     <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
       <iframe
-        src="https://player.vimeo.com/video/1129305618"
+        src="https://player.vimeo.com/video/1158649716"
         title="Latest Content"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
