@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const VerticalContent = () => {
   const navigate = useNavigate();
 
-  const handleContactClick = (e: React.MouseEvent) => {
+  const handleContactClick = (e) => {
     e.preventDefault();
     navigate("/");
     setTimeout(() => {
@@ -107,4 +107,3 @@ const VerticalContent = () => {
 };
 
 export default VerticalContent;
-
