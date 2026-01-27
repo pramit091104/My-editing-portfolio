@@ -1,114 +1,131 @@
-import { Instagram } from "lucide-react";
 import { useInView } from "../hooks/useInView";
+import { ExternalLink, Sparkles } from "lucide-react";
 
 const skills = [
-  "Videography",
-  "Cinematography", 
-  "Reels/Shorts",
-  "Long Video",
-  "Storytelling",
-  "Color Grading",
-];
-
-const hobbies = [
-  "Creating Videos",
-  "Listening to Songs", 
-  "Video Editing",
-  "Sketching",
-  "Playing Video Games",
+  { name: "Videography", level: 95},
+  { name: "Cinematography", level: 90 }, 
+  { name: "Reels/Shorts", level: 98 },
+  { name: "Long Video", level: 85},
+  { name: "Storytelling", level: 92,},
+  { name: "Color Grading", level: 88,},
 ];
 
 const software = [
   {
     name: "After Effects",
     icon: "Ae",
-    color: "from-purple-600 to-blue-600"
+    color: "from-purple-600 to-blue-600",
   },
   {
     name: "Premiere Pro", 
     icon: "Pr",
-    color: "from-purple-600 to-pink-600"
+    color: "from-purple-600 to-pink-600",
   },
   {
     name: "CapCut",
     icon: "Cc",
-    color: "from-gray-600 to-gray-800"
+    color: "from-gray-600 to-gray-800",
   },
 ];
 
 export default function AboutSection() {
-  const [ref, inView] = useInView({ threshold: 0.2 });
+  const [ref, inView] = useInView<HTMLElement>({ threshold: 0.3 });
+  
   return (
-    <section ref={ref} className="relative w-full py-8 sm:py-10 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8">
-      <div className="relative max-w-5xl mx-auto flex flex-col gap-4 sm:gap-6 md:gap-8">
+    <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6 bg-zinc-900">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className={`text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 ${inView ? 'blur-fade-up-posterize' : ''}`}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-3 sm:mb-4 tracking-wide px-2">
-            About <span className="font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">Me</span>
+        <div className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">Me</span>
           </h2>
-          <div className="w-12 sm:w-16 md:w-24 h-0.5 bg-gradient-to-r from-violet-400 to-purple-400 mx-auto" />
+          <p className="text-lg text-zinc-300 max-w-2xl mx-auto">
+            Passionate visual storyteller crafting compelling narratives through the lens
+          </p>
         </div>
 
-        {/* Main Content (single column, no card backgrounds) */}
-        <div className="space-y-6 sm:space-y-8 md:space-y-8">
-          {/* Introduction and Skills - Left Column */}
-          <div className="md:grid md:grid-cols-2 md:gap-8 md:items-start">
-            <div className="space-y-4 sm:space-y-6">
-              {/* Introduction */}
-              <div className={inView ? 'blur-fade-up-posterize' : ''}>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-3 sm:mb-4">Myself</h3>
-                <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6 px-1">
-                  Over <span className="text-violet-400 font-semibold">2.5+ years</span> of experience creating 
-                  compelling visual stories that <span className="text-purple-400 font-semibold">resonate with audiences</span>. 
-                  Specializing in creative edits and cinematic storytelling.
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column */}
+          <div className="space-y-8">
+            {/* Introduction */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-violet-400" />
+                My Journey
+              </h3>
+              <div className="space-y-3 text-zinc-300 leading-relaxed">
+                <p>
+                  With over <span className="text-violet-400 font-semibold">2.5+ years</span> of experience in visual storytelling, 
+                  I've mastered the art of transforming ideas into <span className="text-purple-400 font-semibold">compelling visual narratives</span>.
                 </p>
-                {/* Software */}
-                <div className="space-y-2 sm:space-y-3">
-                  <h4 className="text-sm sm:text-base md:text-lg font-medium text-zinc-200">Softwares I Use</h4>
-                  <div className="flex flex-wrap gap-2 sm:gap-2 md:gap-3">
-                    {software.map((sw) => (
-                      <div 
-                        key={sw.name} 
-                        className={`flex items-center px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 ${inView ? 'blur-fade-up-posterize' : ''}`}
-                      >
-                        <span className={`w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-lg bg-gradient-to-br ${sw.color} flex items-center justify-center text-white font-bold text-xs sm:text-xs md:text-sm mr-2 sm:mr-2 md:mr-3`}>
-                          {sw.icon}
-                        </span>
-                        <span className="text-zinc-100 font-medium text-xs sm:text-sm md:text-base">{sw.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Skills */}
-              <div className={inView ? 'blur-fade-up-posterize' : ''}>
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-3 sm:mb-4 flex items-center gap-2">
-                  My Skills <span className="text-yellow-400">⚡</span>
-                </h3>
-                <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                  {skills.map((skill) => (
-                    <div 
-                      key={skill} 
-                      className={`text-zinc-300 flex items-center gap-2 text-xs sm:text-sm md:text-base ${inView ? 'blur-fade-up-posterize' : ''}`}
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-violet-400 flex-shrink-0" />
-                      <span>{skill}</span>
-                    </div>
-                  ))}
-                </div>
+                <p>
+                  Specializing in <span className="text-pink-400 font-semibold">creative editing techniques</span> and 
+                  <span className="text-blue-400 font-semibold"> cinematic storytelling</span>, I bring unique perspectives 
+                  to every project.
+                </p>
               </div>
             </div>
 
-            {/* Profile Image - Right Column */}
-            <div className={`flex justify-center md:justify-end mt-4 sm:mt-6 md:mt-0 ${inView ? 'blur-fade-up-posterize' : ''}`}>
-              <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-violet-400/20 shadow-lg">
-                <div className="w-full h-full bg-gradient-to-br from-violet-400/20 to-purple-400/20 flex items-center justify-center">
-                  <span className="text-3xl sm:text-4xl md:text-6xl text-violet-400/50">
-                    <img src="/images/profilePic.jpg" alt="Profile" className="w-full h-full object-cover rounded-full scale-150 translate-y-2 sm:translate-y-2 md:translate-y-14" />
-                  </span>
-                </div>
+            {/* Skills */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-4">Skills & Expertise</h3>
+              <div className="space-y-3">
+                {skills.map((skill) => (
+                  <div key={skill.name} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="text-white font-medium">{skill.name}</span>
+                    </div>
+                    <span className="text-violet-400 font-semibold text-sm">{skill.level}%</span>
+                  </div>
+                ))}
               </div>
+            </div>
+
+            {/* Software */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-4">Tools & Software</h3>
+              <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+                {software.map((sw) => (
+                  <div key={sw.name} className="flex items-center gap-2 p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-violet-500/50 transition-colors duration-300">
+                    <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${sw.color} flex items-center justify-center text-white font-bold text-xs`}>
+                      {sw.icon}
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold text-sm">{sw.name}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-8">
+            {/* Profile Image */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border-2 border-violet-400/30">
+                <img 
+                  src="/images/profilePic.jpg" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover scale-150 translate-y-8" 
+                />
+              </div>
+            </div>
+
+            {/* Simple CTA */}
+            <div className="p-4 rounded-lg bg-violet-500/10 border border-violet-500/30">
+              <h4 className="text-lg font-bold text-white mb-2">Ready to Create Something Amazing?</h4>
+              <p className="text-zinc-300 mb-3 text-sm">
+                Let's collaborate and bring your vision to life.
+              </p>
+              <a 
+                href="mailto:pramit.0904@gmail.com"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold rounded-lg hover:from-violet-600 hover:to-pink-600 transition-colors duration-300"
+              >
+                <span>Let's Connect</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>

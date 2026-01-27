@@ -2,8 +2,11 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import BrandsSection from "@/components/BrandsSection";
 import Navigation from "@/components/Navigation";
+import { useInView } from "@/hooks/useInView";
 
 const Index = () => {
+  const [latestRef, latestInView] = useInView<HTMLElement>({ threshold: 0.3 });
+  const [footerRef, footerInView] = useInView<HTMLElement>({ threshold: 0.3 });
 
   return (
     <>
@@ -14,59 +17,89 @@ const Index = () => {
         <HeroSection />
 
         {/* Latest Content Section */}
-        <section id="latest" className="relative py-8 sm:py-10 md:py-12 -mt-10 px-2 sm:px-4 flex flex-col items-center bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/images/showreel.png)'}}>
-          <div className="pointer-events-none absolute inset-0 backdrop-blur-sm" />
-          <div className="max-w-4xl w-full mx-auto relative mt-4 sm:mt-6">
-  <div className="w-full rounded-xl overflow-hidden shadow-lg relative" style={{ height: 'clamp(200px, 50vw, 320px)' }}>
-    {/* Blurred background layer */}
-    <img
-      src="/images/showreel.png"
-      alt="Showreel background"
-      className="absolute inset-0 w-full h-full object-cover blur-sm opacity-60 scale-105 z-0"
-      aria-hidden="true"
-      draggable="false"
-    />
-    {/* Video layer */}
-    <div className="absolute inset-0 w-full h-full flex items-center justify-center z-10">
-      <iframe
-        src="https://player.vimeo.com/video/1158649716"
-        title="Latest Content"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-        className="w-full h-full object-cover rounded-xl"
-        style={{ minHeight: 0 }}
-      />
-    </div>
-  </div>
-</div>
+        <section 
+          ref={latestRef}
+          id="latest" 
+          className={`relative py-12 sm:py-16 px-4 sm:px-6 flex flex-col items-center transition-all duration-700 ${
+            latestInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{ backgroundImage: 'url(/images/showreel.png)' }}
+          ></div>
+          
+          {/* Background Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-zinc-900/60 to-zinc-950/90"></div>
+          
+          {/* Content container */}
+          <div className="max-w-4xl w-full mx-auto relative z-10">
+            {/* Section title */}
+            <div className="text-center mb-8 sm:mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">Showreel</span>
+              </h2>
+              <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
+                Discover my most recent creative work and visual storytelling
+              </p>
+            </div>
+
+            {/* Video container */}
+            <div className="w-full rounded-xl overflow-hidden shadow-xl border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm" style={{ height: 'clamp(250px, 56vw, 400px)' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1158649716"
+                title="Latest Content"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+                style={{ minHeight: 0, border: 'none' }}
+              />
+            </div>
+          </div>
         </section>
 
         {/* Brands Section */}
         <BrandsSection />
 
-        {/* About Section Last with unique animations */}
-        <div id="about" className="animate-[fadeInUp_1s_ease-out]">
+        {/* About Section */}
+        <div id="about">
           <AboutSection />
         </div>
 
         {/* Footer */}
-        <footer id="contact" className="py-6 sm:py-8 md:py-12 border-t border-zinc-800/50">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-6 sm:mb-8">
+        <footer 
+          ref={footerRef}
+          id="contact" 
+          className={`py-12 sm:py-16 border-t border-zinc-800/50 bg-zinc-900 transition-all duration-700 ${
+            footerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <div className="max-w-5xl mx-auto px-6">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Let's Create <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">Together</span>
+              </h2>
+              <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
+                Ready to bring your vision to life? Get in touch and let's start crafting something extraordinary.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
               {/* Left: Explore Section */}
               <div className="text-center md:text-left">
-                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-3 sm:mb-4">Explore</h3>
-                <div className="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-6 text-zinc-300 text-xs sm:text-sm md:text-base">
+                <h3 className="text-xl font-bold text-white mb-4">Explore</h3>
+                <div className="flex flex-wrap justify-center md:justify-start gap-6">
                   <a 
                     href="/" 
-                    className="hover:text-violet-400 transition-colors"
+                    className="text-zinc-300 hover:text-violet-400 transition-colors duration-300"
                   >
                     Home
                   </a>
                   <a 
                     href="/portfolio" 
-                    className="hover:text-violet-400 transition-colors"
+                    className="text-zinc-300 hover:text-violet-400 transition-colors duration-300"
                   >
                     Portfolio
                   </a>
@@ -82,7 +115,7 @@ const Index = () => {
                         });
                       }
                     }}
-                    className="hover:text-violet-400 transition-colors"
+                    className="text-zinc-300 hover:text-violet-400 transition-colors duration-300"
                   >
                     Contact
                   </a>
@@ -91,36 +124,51 @@ const Index = () => {
 
               {/* Right: Let's Connect Section */}
               <div className="text-center md:text-right">
-                <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white mb-3 sm:mb-4">Let's Connect</h3>
-                <div className="flex flex-col sm:flex-row justify-center md:justify-end items-center gap-3 sm:gap-4 text-zinc-300 text-xs sm:text-sm md:text-base">
+                <h3 className="text-xl font-bold text-white mb-4">Let's Connect</h3>
+                <div className="flex flex-col gap-4 items-center md:items-end">
                   <a 
                     href="mailto:pramit.0904@gmail.com" 
-                    className="flex items-center gap-2 hover:text-white transition-all duration-300 group"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-violet-500/50 transition-colors duration-300"
                   >
-                    <span className="inline-block w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-lg bg-zinc-800 flex items-center justify-center group-hover:bg-zinc-700 group-hover:rotate-12 transition-all duration-300">
-                      <span className="text-xs">📧</span>
-                    </span>
-                    <span className="break-all text-xs sm:text-sm">pramit.0904@gmail.com</span>
+                    <div className="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
+                      <span className="text-lg">📧</span>
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm text-zinc-400">Email</div>
+                      <div className="text-zinc-200 font-mono text-sm">pramit.0904@gmail.com</div>
+                    </div>
                   </a>
+                  
                   <a 
                     href="https://instagram.com/_editverse_x" 
                     target="_blank" 
                     rel="noopener"
-                    className="flex items-center gap-2 hover:text-pink-400 transition-all duration-300 group"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-pink-500/50 transition-colors duration-300"
                   >
-                    <span className="inline-block w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-lg bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center group-hover:rotate-12 transition-all duration-300">
-                      <svg className="w-3 h-3 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 0A5.75 5.75 0 0 0 2 7.75Zm8.5 0A5.75 5.75 0 0 1 22 7.75Zm0 20A5.75 5.75 0 0 0 22 16.25Zm-8.5 0A5.75 5.75 0 0 1 2 16.25ZM8 12a4 4 0 1 0 8 0a4 4 0 0 0-8 0Zm8.5-3.25h.01v.01h-.01Z"/></svg>
-                    </span>
-                    <span className="text-xs sm:text-sm">@editverse_x</span>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 0A5.75 5.75 0 0 0 2 7.75Zm8.5 0A5.75 5.75 0 0 1 22 7.75Zm0 20A5.75 5.75 0 0 0 22 16.25Zm-8.5 0A5.75 5.75 0 0 1 2 16.25ZM8 12a4 4 0 1 0 8 0a4 4 0 0 0-8 0Zm8.5-3.25h.01v.01h-.01Z"/>
+                      </svg>
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm text-zinc-400">Instagram</div>
+                      <div className="text-zinc-200 font-mono text-sm">@editverse_x</div>
+                    </div>
                   </a>
                 </div>
               </div>
             </div>
-            <p className="text-xs sm:text-sm md:text-base text-zinc-500 px-2 text-center">
-              &copy; {new Date().getFullYear()} Creative Video Portfolio. 
-              <span className="text-violet-400 mx-1 sm:mx-2">•</span>
-              Crafted with passion for visual storytelling.
-            </p>
+
+            {/* Footer bottom */}
+            <div className="text-center pt-8 border-t border-zinc-700/50">
+              <p className="text-zinc-400 font-mono text-sm">
+                &copy; {new Date().getFullYear()} Creative Video Portfolio
+                <span className="mx-2 text-violet-400">•</span>
+                <span className="text-violet-400">
+                  Crafted with passion for visual storytelling
+                </span>
+              </p>
+            </div>
           </div>
         </footer>
         </div>
