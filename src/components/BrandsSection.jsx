@@ -1,7 +1,38 @@
 import { useInView } from "../hooks/useInView";
 import { ExternalLink } from "lucide-react";
 
+const scrollStyle = `
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .brands-scroll {
+    animation: scroll-left 20s linear infinite;
+  }
+  .brands-scroll:hover {
+    animation-play-state: paused;
+  }
+`;
+
 const BRANDS = [
+  { 
+    name: "Bartisans", 
+    img: "/brands/bartisans.jpg", 
+    url: "https://www.instagram.com/bartisans.in/",
+    category: "Hospitality"
+  },
+  { 
+    name: "eatmurukku", 
+    img: "/brands/murukku.jpg", 
+    url: "https://www.instagram.com/eatmurukku/",
+    category: "Hospitality"
+  },
+  { 
+    name: "Kytvhens", 
+    img: "/brands/kytchens.jpg", 
+    url: "https://www.instagram.com/kytchens/",
+    category: "Hospitality"
+  },
   { 
     name: "Eagle Boys", 
     img: "/brands/eagleboys.jpg", 
@@ -26,12 +57,7 @@ const BRANDS = [
     url: "https://www.instagram.com/meditourz/",
     category: "Healthcare"
   },
-  { 
-    name: "Bartisans", 
-    img: "/brands/bartisans.jpg", 
-    url: "https://www.instagram.com/bartisans.in/",
-    category: "Hospitality"
-  },
+  
 ];
 
 const BrandsSection = () => {
@@ -50,19 +76,19 @@ const BrandsSection = () => {
           </p>
         </div>
 
-        {/* Brands Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {BRANDS.map((brand, idx) => (
-            <a 
-              key={idx}
-              href={brand.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group block p-4 rounded-xl bg-zinc-800/30 border border-zinc-700/30 hover:border-violet-500/50 hover:bg-zinc-800/50 transition-all duration-300"
-            >
-              {/* Brand Image */}
-              <div className="relative mb-3">
-                <div className="w-16 h-16 mx-auto rounded-xl overflow-hidden border border-zinc-600/50">
+        {/* Scrolling Brands */}
+        <div className="overflow-hidden">
+          <style>{scrollStyle}</style>
+          <div className="flex brands-scroll w-max">
+            {[...BRANDS, ...BRANDS].map((brand, idx) => (
+              <a
+                key={idx}
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3 mx-8 group flex-shrink-0"
+              >
+                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-zinc-700/50 group-hover:border-violet-400/70 transition-colors duration-300">
                   <img
                     src={brand.img}
                     alt={brand.name}
@@ -70,22 +96,12 @@ const BrandsSection = () => {
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute top-1 right-1 w-5 h-5 bg-zinc-900/80 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ExternalLink className="w-3 h-3 text-violet-400" />
-                </div>
-              </div>
-
-              {/* Brand Info */}
-              <div className="text-center">
-                <h3 className="text-white font-semibold text-sm mb-1 group-hover:text-violet-300 transition-colors duration-300">
+                <span className="text-zinc-400 text-xs font-medium group-hover:text-violet-300 transition-colors duration-300 whitespace-nowrap">
                   {brand.name}
-                </h3>
-                <div className="inline-block px-2 py-1 bg-violet-500/10 rounded-full">
-                  <span className="text-violet-300 text-xs">{brand.category}</span>
-                </div>
-              </div>
-            </a>
-          ))}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Simple CTA */}
