@@ -1,48 +1,20 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-
-const NAV_ITEMS = [
-  { id: "home", label: "Home", path: "/" },
-  { id: "portfolio", label: "Portfolio", path: "/portfolio" },
-  { id: "contact", label: "Contact", path: "/#contact" },
-];
+import { NAV_ITEMS, SITE } from "@/constants/uiTexts";
+import { useContactScroll } from "@/hooks/useContactScroll";
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
+  const scrollToContact = useContactScroll();
 
   useEffect(() => {
-    // Close menu when route changes
     setMenuOpen(false);
   }, [location.pathname]);
 
   const handleContactClick = (e) => {
-    e.preventDefault();
     setMenuOpen(false);
-    
-    if (location.pathname !== "/") {
-      // If not on home page, navigate to home first, then scroll
-      navigate("/");
-      setTimeout(() => {
-        const el = document.getElementById("contact") || document.querySelector("footer");
-        if (el) {
-          window.scrollTo({
-            top: el.getBoundingClientRect().top + window.scrollY - 80,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
-    } else {
-      // If on home page, scroll to contact
-      const el = document.getElementById("contact") || document.querySelector("footer");
-      if (el) {
-        window.scrollTo({
-          top: el.getBoundingClientRect().top + window.scrollY - 80,
-          behavior: "smooth",
-        });
-      }
-    }
+    scrollToContact(e);
   };
 
   return (
@@ -50,9 +22,8 @@ const Navigation = () => {
       {/* Brand name */}
       <div className="flex w-full items-center justify-between md:justify-start">
         <Link to="/" className="text-2xl sm:text-3xl md:text-4xl font-blank-script text-white mb-0">
-          editverse
+          {SITE.brandName}
         </Link>
-        {/* Hamburger menu icon for mobile */}
         <button
           className="md:hidden p-2 focus:outline-none text-white"
           onClick={() => setMenuOpen((open) => !open)}
@@ -63,22 +34,24 @@ const Navigation = () => {
           </svg>
         </button>
       </div>
-      {/* Center nav links and contact button, hidden on mobile unless menuOpen */}
-      <div className={`flex-col md:flex md:flex-row w-full md:w-auto justify-center gap-3 sm:gap-4 md:gap-10 items-center ${menuOpen ? 'flex' : 'hidden'} md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 pb-2 md:pb-0`}>
-        {NAV_ITEMS.filter(item => item.id !== "contact").map((item) => (
+
+      {/* Nav links */}
+      <div className={`flex-col md:flex md:flex-row w-full md:w-auto justify-center gap-3 sm:gap-4 md:gap-10 items-center ${menuOpen ? "flex" : "hidden"} md:flex md:absolute md:left-1/2 md:transform md:-translate-x-1/2 pb-2 md:pb-0`}>
+        {NAV_ITEMS.filter((item) => item.id !== "contact").map((item) => (
           <Link
             key={item.id}
             to={item.path}
             onClick={() => setMenuOpen(false)}
             className={`text-zinc-100 hover:text-violet-400 transition-colors font-mono text-sm sm:text-base md:text-lg tracking-wide focus:outline-none ${
-              location.pathname === item.path ? 'text-violet-400' : ''
+              location.pathname === item.path ? "text-violet-400" : ""
             }`}
           >
             {item.label}
           </Link>
         ))}
       </div>
-      {/* Contact button positioned on the right */}
+
+      {/* Contact button — desktop */}
       <div className="hidden md:block">
         <button
           onClick={handleContactClick}
@@ -87,8 +60,9 @@ const Navigation = () => {
           CONTACT
         </button>
       </div>
-      {/* Contact button for mobile */}
-      <div className={`md:hidden w-full ${menuOpen ? 'block' : 'hidden'}`}>
+
+      {/* Contact button — mobile */}
+      <div className={`md:hidden w-full ${menuOpen ? "block" : "hidden"}`}>
         <button
           onClick={handleContactClick}
           className="bg-white text-zinc-900 font-mono px-4 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm font-semibold focus:outline-none w-full"

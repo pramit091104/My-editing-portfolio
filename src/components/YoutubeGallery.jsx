@@ -1,24 +1,6 @@
 import { Youtube, ExternalLink } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
-const YOUTUBE_VIDEOS = [
-  {
-    id: "xjb1SzUb4rU",
-    title: "Creative Video Edit"
-  },
-  {
-    id: "nWuKVOo50aY",
-    title: "Professional Production"
-  },
-  {
-    id: "64M463Dn14Q",
-    title: "Cinematic Storytelling"
-  },
-  {
-    id: "cgquyjJJ6MA",
-    title: "Visual Narrative"
-  },
-];
+import { YOUTUBE_VIDEOS } from "@/constants/uiTexts";
 
 const YoutubeGallery = () => (
   <div className="w-full max-w-6xl mx-auto">
@@ -39,7 +21,7 @@ const YoutubeGallery = () => (
 
           {/* External Link */}
           <div className="absolute top-3 right-3 z-20">
-            <a 
+            <a
               href={`https://www.youtube.com/watch?v=${video.id}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -49,7 +31,7 @@ const YoutubeGallery = () => (
             </a>
           </div>
 
-          {/* Video Container */}
+          {/* Video */}
           <AspectRatio ratio={16 / 9} className="w-full">
             <iframe
               src={`https://www.youtube.com/embed/${video.id}`}
@@ -57,18 +39,18 @@ const YoutubeGallery = () => (
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
               className="w-full h-full"
-              style={{ border: 'none' }}
+              style={{ border: "none" }}
             />
           </AspectRatio>
 
-          {/* Video Title Overlay */}
+          {/* Title Overlay */}
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
             <h3 className="text-white font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {video.title}
             </h3>
           </div>
 
-          {/* Hover Effect */}
+          {/* Hover tint */}
           <div className="absolute inset-0 bg-gradient-to-t from-red-600/0 to-red-600/0 group-hover:from-red-600/5 group-hover:to-red-600/5 transition-all duration-300 pointer-events-none" />
         </div>
       ))}
