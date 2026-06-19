@@ -48,8 +48,8 @@ const Footer = ({ title, subtitle, footerRef, className = "" }) => {
                   <span className="text-lg">📧</span>
                 </div>
                 <div className="text-left">
-                  <div className="text-xs text-zinc-500 uppercase font-semibold">Email</div>
-                  <div className="text-zinc-200 font-mono text-sm">{OWNER.email}</div>
+                  <div className="text-sm text-zinc-500 uppercase font-semibold">Email</div>
+                  <div className="text-zinc-200 font-mono text-base whitespace-nowrap">{OWNER.email}</div>
                 </div>
               </a>
 
@@ -63,8 +63,8 @@ const Footer = ({ title, subtitle, footerRef, className = "" }) => {
                   <InstagramIcon />
                 </div>
                 <div className="text-left">
-                  <div className="text-xs text-zinc-500 uppercase font-semibold">Instagram</div>
-                  <div className="text-zinc-200 font-mono text-sm">{OWNER.instagram.handle}</div>
+                  <div className="text-sm text-zinc-500 uppercase font-semibold">Instagram</div>
+                  <div className="text-zinc-200 font-mono text-base whitespace-nowrap">{OWNER.instagram.handle}</div>
                 </div>
               </a>
             </div>

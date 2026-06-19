@@ -63,7 +63,7 @@ const Navigation = () => {
             key={item.id}
             to={item.path}
             onClick={() => setMenuOpen(false)}
-            className={`text-zinc-100 hover:text-violet-400 transition-colors font-mono text-sm sm:text-base md:text-lg tracking-wide focus:outline-none ${
+            className={`text-zinc-100 hover:text-violet-400 transition-colors font-mono text-base md:text-lg tracking-wide focus:outline-none whitespace-nowrap ${
               location.pathname === item.path ? "text-violet-400" : ""
             }`}
           >
@@ -86,7 +86,7 @@ const Navigation = () => {
       <div className={`md:hidden w-full ${menuOpen ? "block" : "hidden"}`}>
         <button
           onClick={handleContactClick}
-          className="bg-white hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-500 hover:text-white text-zinc-900 font-mono px-4 py-2 rounded-xl shadow transition-all duration-300 text-sm font-semibold focus:outline-none w-full cursor-pointer"
+          className="bg-white hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-500 hover:text-white text-zinc-900 font-mono px-4 py-2.5 rounded-xl shadow transition-all duration-300 text-base font-semibold focus:outline-none w-full cursor-pointer"
         >
           CONTACT
         </button>

@@ -21,16 +21,16 @@ const HeroSection = () => {
 
         {/* Contact Info */}
         <div
-          className={`flex flex-col gap-2 sm:gap-3 text-zinc-300 text-sm sm:text-base md:text-lg font-mono ml-0 sm:ml-4 md:ml-12 lg:ml-24 mt-2 px-2 sm:px-0 ${inView ? "blur-fade-up-posterize" : ""}`}
+          className={`flex flex-col gap-2.5 sm:gap-3 text-zinc-300 text-base md:text-lg font-mono ml-0 sm:ml-4 md:ml-12 lg:ml-24 mt-2 px-2 sm:px-0 ${inView ? "blur-fade-up-posterize" : ""}`}
         >
           <div className="flex items-center gap-2">
             <MapPin size={18} className="sm:w-5 sm:h-5 flex-shrink-0" />
-            <span className="break-words">{OWNER.location}</span>
+            <span className="whitespace-nowrap">{OWNER.location}</span>
           </div>
 
           <div className="flex items-center gap-2">
             <Mail size={18} className="sm:w-5 sm:h-5 flex-shrink-0" />
-            <span className="break-all text-xs sm:text-base">{OWNER.email}</span>
+            <span className="whitespace-nowrap">{OWNER.email}</span>
           </div>
         </div>
       </div>

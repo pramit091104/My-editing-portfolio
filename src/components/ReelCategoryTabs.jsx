@@ -1,8 +1,8 @@
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const ReelCategoryTabs = ({ value, onChange, categories }) => (
-  <Tabs value={value} onValueChange={onChange} className="w-full flex justify-center mb-4 sm:mb-6 animate-fade-in overflow-x-auto">
-    <TabsList className="flex-wrap sm:flex-nowrap w-full sm:w-auto justify-center">
+  <Tabs value={value} onValueChange={onChange} className="w-full flex justify-center mb-4 sm:mb-6 animate-fade-in">
+    <TabsList className="flex-nowrap w-full sm:w-auto justify-center overflow-x-auto">
       {categories.map(cat => (
         <TabsTrigger
           key={cat.key}

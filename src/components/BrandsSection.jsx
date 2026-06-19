@@ -34,7 +34,7 @@ const BrandsSection = () => {
               {BRANDS_SECTION.headingAccent}
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{BRANDS_SECTION.subtitle}</p>
+          <p className="text-lg text-zinc-300 max-w-2xl mx-auto">{BRANDS_SECTION.subtitle}</p>
         </div>
 
         {/* Scrolling Brands */}

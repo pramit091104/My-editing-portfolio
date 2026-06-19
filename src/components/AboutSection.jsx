@@ -20,7 +20,7 @@ export default function AboutSection() {
               {ABOUT.headingAccent}
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{ABOUT.subtitle}</p>
+          <p className="text-lg text-zinc-300 max-w-2xl mx-auto">{ABOUT.subtitle}</p>
         </div>
 
         {/* Main Content Grid */}
@@ -33,7 +33,7 @@ export default function AboutSection() {
                 <Sparkles className="w-5 h-5 text-violet-400" />
                 {ABOUT.journeyTitle}
               </h3>
-              <div className="space-y-3 text-zinc-300 leading-relaxed">
+              <div className="space-y-4 text-zinc-300 leading-relaxed text-lg">
                 <p>
                   With over{" "}
                   <span className="text-violet-400 font-semibold">2.5+ years</span> of
@@ -95,7 +95,7 @@ export default function AboutSection() {
                     >
                       {sw.icon}
                     </div>
-                    <div className="text-white font-semibold text-sm">{sw.name}</div>
+                    <div className="text-white font-semibold text-base whitespace-nowrap">{sw.name}</div>
                   </div>
                 ))}
               </div>

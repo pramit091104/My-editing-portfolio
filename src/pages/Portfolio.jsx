@@ -49,7 +49,7 @@ const Portfolio = () => {
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white">{PORTFOLIO.longForm.heading}</h2>
               </div>
-              <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{PORTFOLIO.longForm.subtitle}</p>
+              <p className="text-lg text-zinc-300 max-w-2xl mx-auto">{PORTFOLIO.longForm.subtitle}</p>
               <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mt-4 rounded-full" />
             </div>
             <YoutubeGallery />
@@ -71,7 +71,7 @@ const Portfolio = () => {
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white">{PORTFOLIO.vertical.heading}</h2>
               </div>
-              <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{PORTFOLIO.vertical.subtitle}</p>
+              <p className="text-lg text-zinc-300 max-w-2xl mx-auto">{PORTFOLIO.vertical.subtitle}</p>
               <div className="w-20 h-1 bg-gradient-to-r from-violet-500 to-pink-500 mx-auto mt-4 rounded-full" />
             </div>
             <ReelsGallery />
@@ -88,7 +88,7 @@ const Portfolio = () => {
                   {PORTFOLIO.cta.headingAccent}
                 </span>
               </h3>
-              <p className="text-zinc-300 text-base sm:text-lg mb-6">{PORTFOLIO.cta.subtitle}</p>
+              <p className="text-zinc-300 text-lg mb-6">{PORTFOLIO.cta.subtitle}</p>
               <a
                 href={`mailto:${OWNER.email}`}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold rounded-xl hover:from-violet-600 hover:to-pink-600 transition-colors duration-300"
