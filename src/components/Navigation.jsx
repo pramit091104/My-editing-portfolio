@@ -42,7 +42,7 @@ const Navigation = () => {
     >
       {/* Brand name */}
       <div className="flex w-full items-center justify-between md:justify-start">
-        <Link to="/" className="text-2xl sm:text-3xl md:text-4xl font-blank-script text-white mb-0">
+        <Link to="/" className="text-3xl sm:text-3xl md:text-4xl font-blank-script text-white mb-0">
           {SITE.brandName}
         </Link>
         <button
