@@ -1,7 +1,7 @@
 // ─── Owner / Contact ────────────────────────────────────────────────────────
 export const OWNER = {
   name: "editverse",
-  email: "pramit.0904@gmail.com",
+  email: atob("cHJhbWl0LjA5MDRAZ21haWwuY29t"),
   location: "Pune, Maharashtra, India",
   instagram: {
     handle: "@editverse_x",
