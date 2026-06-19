@@ -32,10 +32,12 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out border flex flex-col md:flex-row items-center justify-between shadow-lg backdrop-blur-md gap-2 md:gap-0 ${
-        scrolled
-          ? "top-3 w-[90%] max-w-5xl py-2 px-4 sm:px-6 bg-zinc-950/80 border-zinc-800/80 rounded-xl"
-          : "top-5 w-[94%] max-w-6xl py-3.5 px-6 sm:px-8 bg-zinc-950/45 border-zinc-800/40 rounded-2xl"
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out border flex flex-col md:flex-row items-center justify-between shadow-lg backdrop-blur-md ${
+        menuOpen
+          ? "top-3 w-[90%] py-4 px-5 bg-zinc-950/95 border-zinc-800/90 rounded-2xl gap-4"
+          : scrolled
+          ? "top-3 w-[90%] max-w-5xl py-2 px-4 sm:px-6 bg-zinc-950/80 border-zinc-800/80 rounded-xl gap-2 md:gap-0"
+          : "top-5 w-[94%] max-w-6xl py-3.5 px-6 sm:px-8 bg-zinc-950/45 border-zinc-800/40 rounded-2xl gap-2 md:gap-0"
       }`}
     >
       {/* Brand name */}

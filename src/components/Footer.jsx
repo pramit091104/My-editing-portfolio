@@ -17,8 +17,8 @@ const Footer = ({ title, subtitle, footerRef, className = "" }) => {
       id="contact"
       className={`py-16 sm:py-24 border-t border-zinc-800/50 bg-zinc-950 relative overflow-hidden ${className}`}
     >
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mb-16">
           {/* Left Column - Copy & Connect Cards & Explore Links */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-10">
             <div>

@@ -40,7 +40,7 @@ const Index = () => {
                     {SHOWREEL.headingAccent}
                   </span>
                 </h2>
-                <p className="text-zinc-300 text-lg max-w-2xl mx-auto">{SHOWREEL.subtitle}</p>
+                <p className="text-zinc-300 text-base sm:text-lg max-w-2xl mx-auto">{SHOWREEL.subtitle}</p>
               </div>
 
               <ShowreelPlayer />

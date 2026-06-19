@@ -34,14 +34,14 @@ const BrandsSection = () => {
               {BRANDS_SECTION.headingAccent}
             </span>
           </h2>
-          <p className="text-lg text-zinc-300 max-w-2xl mx-auto">{BRANDS_SECTION.subtitle}</p>
+          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{BRANDS_SECTION.subtitle}</p>
         </div>
 
         {/* Scrolling Brands */}
         <div className="relative overflow-hidden py-4">
           {/* Edge fade gradients */}
-          <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-28 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-28 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
 
           <style>{scrollStyle}</style>
           <div className="flex brands-scroll w-max gap-6">

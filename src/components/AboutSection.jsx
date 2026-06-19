@@ -20,11 +20,11 @@ export default function AboutSection() {
               {ABOUT.headingAccent}
             </span>
           </h2>
-          <p className="text-lg text-zinc-300 max-w-2xl mx-auto">{ABOUT.subtitle}</p>
+          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{ABOUT.subtitle}</p>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column */}
           <div className="space-y-8">
             {/* Journey */}
@@ -84,11 +84,11 @@ export default function AboutSection() {
             {/* Software */}
             <div>
               <h3 className="text-xl font-bold text-white mb-4">{ABOUT.softwareTitle}</h3>
-              <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+              <div className="flex flex-wrap gap-3 sm:gap-4 justify-start">
                 {SOFTWARE.map((sw) => (
                   <div
                     key={sw.name}
-                    className="flex items-center gap-2 p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-violet-500/50 transition-colors duration-300"
+                    className="flex items-center gap-2 p-2.5 sm:p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-violet-500/50 transition-colors duration-300"
                   >
                     <div
                       className={`w-8 h-8 rounded-lg bg-gradient-to-br ${sw.color} flex items-center justify-center text-white font-bold text-xs`}
