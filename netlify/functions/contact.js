@@ -1,32 +1,43 @@
 import nodemailer from "nodemailer";
 
-export default async function handler(req, res) {
+export const handler = async (event, context) => {
   // Only allow POST requests
-  if (req.method !== "POST") {
-    res.setHeader("Allow", ["POST"]);
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
-  }
-
-  const { name, email, message } = req.body;
-
-  // Basic validation
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: "Missing required fields" });
-  }
-
-  // Read environment variables
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpPort = process.env.SMTP_PORT || 587;
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const recipientEmail = process.env.RECIPIENT_EMAIL || smtpUser;
-
-  if (!smtpHost || !smtpUser || !smtpPass) {
-    console.error("Missing SMTP configuration environment variables.");
-    return res.status(500).json({ error: "SMTP Server configuration error" });
+  if (event.httpMethod !== "POST") {
+    return {
+      statusCode: 405,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ error: "Method not allowed" }),
+    };
   }
 
   try {
+    const { name, email, message } = JSON.parse(event.body);
+
+    // Basic validation
+    if (!name || !email || !message) {
+      return {
+        statusCode: 400,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ error: "Missing required fields" }),
+      };
+    }
+
+    // Read environment variables
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPort = process.env.SMTP_PORT || 587;
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const recipientEmail = process.env.RECIPIENT_EMAIL || smtpUser;
+
+    if (!smtpHost || !smtpUser || !smtpPass) {
+      console.error("Missing SMTP configuration environment variables.");
+      return {
+        statusCode: 500,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ error: "SMTP Server configuration error" }),
+      };
+    }
+
     // Configure nodemailer transporter
     const transporter = nodemailer.createTransport({
       host: smtpHost,
@@ -62,9 +73,17 @@ export default async function handler(req, res) {
     // Send email
     await transporter.sendMail(mailOptions);
 
-    return res.status(200).json({ success: true, message: "Email sent successfully" });
+    return {
+      statusCode: 200,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ success: true, message: "Email sent successfully" }),
+    };
   } catch (error) {
     console.error("Error sending email via Nodemailer:", error);
-    return res.status(500).json({ error: "Failed to send email" });
+    return {
+      statusCode: 500,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ error: "Failed to send email" }),
+    };
   }
-}
+};
