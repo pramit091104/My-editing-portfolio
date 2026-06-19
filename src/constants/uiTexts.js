@@ -1,7 +1,7 @@
 // ─── Owner / Contact ────────────────────────────────────────────────────────
 export const OWNER = {
   name: "editverse",
-  email: atob("cHJhbWl0LjA5MDRAZ21haWwuY29t"),
+  email: String.fromCharCode(112, 114, 97, 109, 105, 116, 46, 48, 57, 48, 52, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109),
   location: "Pune, Maharashtra, India",
   instagram: {
     handle: "@editverse_x",
