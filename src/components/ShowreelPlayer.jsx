@@ -17,8 +17,7 @@ export default function ShowreelPlayer() {
 
   return (
     <div
-      className="group relative w-full rounded-xl transition-all duration-300"
-      style={{ height: "clamp(250px, 56vw, 450px)" }}
+      className="group relative w-full aspect-video rounded-xl transition-all duration-300"
       data-cursor={!playing ? "play" : undefined}
       onClick={() => {
         if (!playing) setPlaying(true);

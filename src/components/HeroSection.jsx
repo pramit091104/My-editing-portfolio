@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center bg-zinc-950 px-4 sm:px-6 md:px-8 hero-noise-bg pt-20 sm:pt-24"
+      className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center bg-zinc-950 px-4 sm:px-6 md:px-8 hero-noise-bg pt-28 sm:pt-24"
     >
       <div className="w-full flex flex-col justify-center mt-4 sm:mt-8 md:mt-16 lg:mt-24">
         {/* Tagline */}

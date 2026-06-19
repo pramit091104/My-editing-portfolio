@@ -63,7 +63,7 @@ export default function ContactForm() {
 
       <form
         onSubmit={handleSubmit}
-        className="relative bg-zinc-900/40 backdrop-blur-md border border-zinc-800 p-6 sm:p-8 rounded-2xl shadow-xl flex flex-col gap-5 z-10"
+        className="relative bg-zinc-900/40 backdrop-blur-md border border-zinc-800 p-5 sm:p-8 rounded-2xl shadow-xl flex flex-col gap-5 z-10"
       >
         <h3 className="text-xl font-bold text-white mb-1">Send a Message</h3>
         
