@@ -170,5 +170,5 @@ export const FOOTER = {
   exploreTitle: "Explore",
   connectTitle: "Let's Connect",
   indexTitle: "Let's Create Together",
-  indexSubtitle: "Ready to bring your vision to life? Get in touch and let's start crafting something extraordinary.",
+  indexSubtitle: "Ready to bring your vision to life?",
 };
