@@ -303,3 +303,10 @@ html {
 .blur-fade-up-posterize {
   animation: blurFadeUpPosterize 1.1s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
+
+@media (pointer: fine) {
+  html, body, a, button, select, input, [role="button"], [data-cursor="play"] {
+    cursor: none !important;
+  }
+}
+

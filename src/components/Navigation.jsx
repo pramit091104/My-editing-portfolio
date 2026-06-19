@@ -5,6 +5,7 @@ import { useContactScroll } from "@/hooks/useContactScroll";
 
 const Navigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const scrollToContact = useContactScroll();
 
@@ -12,20 +13,38 @@ const Navigation = () => {
     setMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleContactClick = (e) => {
     setMenuOpen(false);
     scrollToContact(e);
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-zinc-950/90 border-b border-zinc-800/50 shadow-sm backdrop-blur flex flex-col md:flex-row items-center justify-between px-3 sm:px-4 md:px-8 py-2 sm:py-3 gap-2 md:gap-0">
+    <nav
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out border flex flex-col md:flex-row items-center justify-between shadow-lg backdrop-blur-md gap-2 md:gap-0 ${
+        scrolled
+          ? "top-3 w-[90%] max-w-5xl py-2 px-4 sm:px-6 bg-zinc-950/80 border-zinc-800/80 rounded-xl"
+          : "top-5 w-[94%] max-w-6xl py-3.5 px-6 sm:px-8 bg-zinc-950/45 border-zinc-800/40 rounded-2xl"
+      }`}
+    >
       {/* Brand name */}
       <div className="flex w-full items-center justify-between md:justify-start">
         <Link to="/" className="text-2xl sm:text-3xl md:text-4xl font-blank-script text-white mb-0">
           {SITE.brandName}
         </Link>
         <button
-          className="md:hidden p-2 focus:outline-none text-white"
+          className="md:hidden p-2 focus:outline-none text-white cursor-pointer"
           onClick={() => setMenuOpen((open) => !open)}
           aria-label="Open menu"
         >
@@ -55,7 +74,7 @@ const Navigation = () => {
       <div className="hidden md:block">
         <button
           onClick={handleContactClick}
-          className="bg-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm md:text-base font-semibold focus:outline-none"
+          className="bg-white hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-500 hover:text-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow transition-all duration-300 text-sm md:text-base font-semibold focus:outline-none cursor-pointer"
         >
           CONTACT
         </button>
@@ -65,7 +84,7 @@ const Navigation = () => {
       <div className={`md:hidden w-full ${menuOpen ? "block" : "hidden"}`}>
         <button
           onClick={handleContactClick}
-          className="bg-white text-zinc-900 font-mono px-4 py-2 rounded-xl shadow hover:bg-zinc-100 transition-colors text-sm font-semibold focus:outline-none w-full"
+          className="bg-white hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-500 hover:text-white text-zinc-900 font-mono px-4 py-2 rounded-xl shadow transition-all duration-300 text-sm font-semibold focus:outline-none w-full cursor-pointer"
         >
           CONTACT
         </button>

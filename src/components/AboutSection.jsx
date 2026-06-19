@@ -61,11 +61,21 @@ export default function AboutSection() {
             {/* Skills */}
             <div>
               <h3 className="text-xl font-bold text-white mb-4">{ABOUT.skillsTitle}</h3>
-              <div className="space-y-3">
+              <div className="space-y-4">
                 {SKILLS.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between">
-                    <span className="text-white font-medium">{skill.name}</span>
-                    <span className="text-violet-400 font-semibold text-sm">{skill.level}%</span>
+                  <div key={skill.name} className="space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-white font-medium">{skill.name}</span>
+                      <span className="text-violet-400 font-semibold text-sm">{skill.level}%</span>
+                    </div>
+                    <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-violet-500 to-pink-500 rounded-full transition-all duration-1000 ease-out"
+                        style={{
+                          width: inView ? `${skill.level}%` : "0%",
+                        }}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>

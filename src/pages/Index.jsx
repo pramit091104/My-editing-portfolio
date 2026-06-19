@@ -3,6 +3,7 @@ import AboutSection from "@/components/AboutSection";
 import BrandsSection from "@/components/BrandsSection";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ShowreelPlayer from "@/components/ShowreelPlayer";
 import { useInView } from "@/hooks/useInView";
 import { SHOWREEL, FOOTER } from "@/constants/uiTexts";
 
@@ -42,19 +43,7 @@ const Index = () => {
                 <p className="text-zinc-300 text-lg max-w-2xl mx-auto">{SHOWREEL.subtitle}</p>
               </div>
 
-              <div
-                className="w-full rounded-xl overflow-hidden shadow-xl border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm"
-                style={{ height: "clamp(250px, 56vw, 400px)" }}
-              >
-                <iframe
-                  src={SHOWREEL.embedUrl}
-                  title={SHOWREEL.headingAccent}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full"
-                  style={{ minHeight: 0, border: "none" }}
-                />
-              </div>
+              <ShowreelPlayer />
             </div>
           </section>
 

@@ -8,7 +8,7 @@ const scrollStyle = `
     100% { transform: translateX(-50%); }
   }
   .brands-scroll {
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-left 35s linear infinite;
   }
   .brands-scroll:hover {
     animation-play-state: paused;
@@ -38,28 +38,37 @@ const BrandsSection = () => {
         </div>
 
         {/* Scrolling Brands */}
-        <div className="overflow-hidden">
+        <div className="relative overflow-hidden py-4">
+          {/* Edge fade gradients */}
+          <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none" />
+
           <style>{scrollStyle}</style>
-          <div className="flex brands-scroll w-max">
+          <div className="flex brands-scroll w-max gap-6">
             {[...BRANDS, ...BRANDS].map((brand, idx) => (
               <a
                 key={idx}
                 href={brand.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center gap-3 mx-8 group flex-shrink-0"
+                className="flex items-center gap-4 px-5 py-3 bg-zinc-900/30 border border-zinc-800/60 rounded-xl backdrop-blur-sm transition-all duration-300 hover:border-violet-500/50 hover:bg-zinc-900/60 group flex-shrink-0"
               >
-                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-zinc-700/50 group-hover:border-violet-400/70 transition-colors duration-300">
+                <div className="w-11 h-11 rounded-lg overflow-hidden border border-zinc-700/50 group-hover:border-violet-400/50 transition-colors duration-300 flex-shrink-0">
                   <img
                     src={brand.img}
                     alt={brand.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
-                <span className="text-zinc-400 text-xs font-medium group-hover:text-violet-300 transition-colors duration-300 whitespace-nowrap">
-                  {brand.name}
-                </span>
+                <div className="flex flex-col text-left">
+                  <span className="text-zinc-200 text-sm font-semibold group-hover:text-white transition-colors duration-300">
+                    {brand.name}
+                  </span>
+                  <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider group-hover:text-violet-400/80 transition-colors duration-300">
+                    {brand.category || "Collaborator"}
+                  </span>
+                </div>
               </a>
             ))}
           </div>
