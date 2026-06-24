@@ -135,26 +135,26 @@ export const YOUTUBE_VIDEOS = [
 
 // ─── Reels / Vertical Videos ─────────────────────────────────────────────────
 export const REEL_CATEGORIES = [
-  { key: "Trending", label: "Trending" },
-  { key: "informative", label: "Informative" },
-  { key: "events", label: "Events" },
-  { key: "others", label: "Others" },
+  { key: "Lifestyle", label: "Lifestyle" },
+  { key: "Fitness", label: "Fitness" },
+  { key: "Micro-Learning", label: "Micro-Learning" },
+  { key: "UGC Ads", label: "UGC Ads" },
 ];
 
 const vimeoUrl = (id) =>
   `https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0`;
 
 export const REELS = [
-  { id: "c1", category: "Trending", vimeoId: "1107162548", title: "Model/Fashion Shoot Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "c2", category: "Trending", vimeoId: "1107158436", title: "Cafe Vibes Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "c3", category: "Trending", vimeoId: "1179918912", title: "Trending Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "i1", category: "informative", vimeoId: "1136422943", title: "Info Reel 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "i2", category: "informative", vimeoId: "1179917602", title: "Info Reel 2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "i3", category: "informative", vimeoId: "1199116542", title: "Info Reel 3", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "e1", category: "events", vimeoId: "1129288199", title: "Event 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "e2", category: "events", vimeoId: "1179919960", title: "Event 2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "o1", category: "others", vimeoId: "1106914506", title: "Other Edit 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "o2", category: "others", vimeoId: "1137229787", title: "Real Estate", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "c1", category: "Lifestyle", vimeoId: "1107162548", title: "Model/Fashion Shoot Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "c2", category: "Lifestyle", vimeoId: "1107158436", title: "Cafe Vibes Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "c3", category: "Lifestyle", vimeoId: "1179918912", title: "Trending Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "i1", category: "Micro-Learning", vimeoId: "1136422943", title: "Info Reel 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "i2", category: "Micro-Learning", vimeoId: "1179917602", title: "Info Reel 2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "i3", category: "Micro-Learning", vimeoId: "1199116542", title: "Info Reel 3", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "e1", category: "UGC Ads", vimeoId: "1129288199", title: "Event 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "e2", category: "UGC Ads", vimeoId: "1179919960", title: "Event 2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "o1", category: "Fitness", vimeoId: "1106914506", title: "Other Edit 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "o2", category: "UGC Ads", vimeoId: "1137229787", title: "Real Estate", get embedUrl() { return vimeoUrl(this.vimeoId); } },
 ];
 
 // ─── 404 Page ────────────────────────────────────────────────────────────────

@@ -65,11 +65,11 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="relative bg-zinc-900/40 backdrop-blur-md border border-zinc-800 p-5 sm:p-8 rounded-2xl shadow-xl flex flex-col gap-5 z-10"
       >
-        <h3 className="text-2xl font-bold text-white mb-1">Send a Message</h3>
+        <h3 className="text-xl font-bold text-white mb-1">Send a Message</h3>
         
         {/* Name input */}
         <div className="flex flex-col gap-1.5 text-left">
-          <label htmlFor="form-name" className="text-sm font-semibold text-zinc-400 uppercase tracking-wider">
+          <label htmlFor="form-name" className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">
             Name
           </label>
           <input
@@ -78,14 +78,14 @@ export default function ContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="John Doe"
-            className="w-full bg-zinc-950/50 border border-zinc-800/80 rounded-xl px-4 py-3.5 text-lg text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-violet-500/60 focus:ring-1 focus:ring-violet-500/30 transition-all duration-300"
+            className="w-full bg-zinc-950/50 border border-zinc-800/80 rounded-xl px-4 py-3 text-sm sm:text-base text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-violet-500/60 focus:ring-1 focus:ring-violet-500/30 transition-all duration-300"
             required
           />
         </div>
 
         {/* Email input */}
         <div className="flex flex-col gap-1.5 text-left">
-          <label htmlFor="form-email" className="text-sm font-semibold text-zinc-400 uppercase tracking-wider">
+          <label htmlFor="form-email" className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">
             Email
           </label>
           <input
@@ -94,14 +94,14 @@ export default function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="john@example.com"
-            className="w-full bg-zinc-950/50 border border-zinc-800/80 rounded-xl px-4 py-3.5 text-lg text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-violet-500/60 focus:ring-1 focus:ring-violet-500/30 transition-all duration-300"
+            className="w-full bg-zinc-950/50 border border-zinc-800/80 rounded-xl px-4 py-3 text-sm sm:text-base text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-violet-500/60 focus:ring-1 focus:ring-violet-500/30 transition-all duration-300"
             required
           />
         </div>
 
         {/* Message input */}
         <div className="flex flex-col gap-1.5 text-left">
-          <label htmlFor="form-message" className="text-sm font-semibold text-zinc-400 uppercase tracking-wider">
+          <label htmlFor="form-message" className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">
             Message
           </label>
           <textarea
@@ -110,7 +110,7 @@ export default function ContactForm() {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Tell me about your project..."
             rows={4}
-            className="w-full bg-zinc-950/50 border border-zinc-800/80 rounded-xl px-4 py-3.5 text-lg text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-violet-500/60 focus:ring-1 focus:ring-violet-500/30 transition-all duration-300 resize-none animate-none"
+            className="w-full bg-zinc-950/50 border border-zinc-800/80 rounded-xl px-4 py-3 text-sm sm:text-base text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-violet-500/60 focus:ring-1 focus:ring-violet-500/30 transition-all duration-300 resize-none animate-none"
             required
           />
         </div>
@@ -119,7 +119,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-violet-500 to-pink-500 text-white text-lg font-semibold rounded-xl hover:from-violet-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-violet-500/10 cursor-pointer"
+          className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-pink-500 text-white text-sm sm:text-base font-semibold rounded-xl hover:from-violet-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-violet-500/10 cursor-pointer"
         >
           {loading ? (
             <>
