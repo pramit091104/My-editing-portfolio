@@ -139,22 +139,34 @@ export const REEL_CATEGORIES = [
   { key: "Fitness", label: "Fitness" },
   { key: "Micro-Learning", label: "Micro-Learning" },
   { key: "UGC Ads", label: "UGC Ads" },
+  { key: "Real Estate", label: "Real Estate" },
+  { key: "concert", label: "Concert" },
 ];
 
 const vimeoUrl = (id) =>
   `https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0`;
 
 export const REELS = [
-  { id: "c1", category: "Lifestyle", vimeoId: "1107162548", title: "Model/Fashion Shoot Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "c2", category: "Lifestyle", vimeoId: "1107158436", title: "Cafe Vibes Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  //lifestyle
+  { id: "c2", category: "Lifestyle", vimeoId: "1107158436", title: "Model/Fashion Shoot Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
   { id: "c3", category: "Lifestyle", vimeoId: "1179918912", title: "Trending Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "i1", category: "Micro-Learning", vimeoId: "1136422943", title: "Info Reel 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "e2", category: "Lifestyle", vimeoId: "1179919960", title: "Event 2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  //Micro-Learning
   { id: "i2", category: "Micro-Learning", vimeoId: "1179917602", title: "Info Reel 2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
   { id: "i3", category: "Micro-Learning", vimeoId: "1199116542", title: "Info Reel 3", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "e1", category: "UGC Ads", vimeoId: "1129288199", title: "Event 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "e2", category: "UGC Ads", vimeoId: "1179919960", title: "Event 2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  //UGC ads
+  { id: "o4", category: "UGC Ads", vimeoId: "1204760033", title: "Skincare Promo", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+
+  { id: "o5", category: "UGC Ads", vimeoId: "1204760032", title: "Fashion Outfit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  //Fitness
   { id: "o1", category: "Fitness", vimeoId: "1106914506", title: "Other Edit 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "o2", category: "UGC Ads", vimeoId: "1137229787", title: "Real Estate", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "o2", category: "Fitness", vimeoId: "1136422943", title: "Fitness Reel", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  //Real Estate
+  { id: "o3", category: "Real Estate", vimeoId: "1137229787", title: "Real Estate", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "c1", category: "Real Estate", vimeoId: "1107162548", title: "Gym Infra Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  //concert
+  { id: "e1", category: "concert", vimeoId: "1129288199", title: "Event 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+
 ];
 
 // ─── 404 Page ────────────────────────────────────────────────────────────────
