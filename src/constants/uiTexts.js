@@ -162,8 +162,9 @@ export const REELS = [
   { id: "o1", category: "Fitness", vimeoId: "1106914506", title: "Other Edit 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
   { id: "o2", category: "Fitness", vimeoId: "1136422943", title: "Fitness Reel", get embedUrl() { return vimeoUrl(this.vimeoId); } },
   //Real Estate
-  { id: "o3", category: "Real Estate", vimeoId: "1137229787", title: "Real Estate", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "c1", category: "Real Estate", vimeoId: "1107162548", title: "Gym Infra Edit", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "o3", category: "Real Estate", vimeoId: "1137229787", title: "Real Estate-1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "c1", category: "Real Estate", vimeoId: "1211129693", title: "Real Estate-2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "c1", category: "Real Estate", vimeoId: "1207097087", title: "Real Estate-3", get embedUrl() { return vimeoUrl(this.vimeoId); } },
   //concert
   { id: "e1", category: "concert", vimeoId: "1129288199", title: "Event 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
 
