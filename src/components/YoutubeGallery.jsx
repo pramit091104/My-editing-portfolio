@@ -72,10 +72,19 @@ function YoutubeCard({ video, index }) {
 
         {/* Title Overlay */}
         {!playing && (
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent p-4 pt-12 pointer-events-none">
-            <h3 className="text-white font-semibold text-sm transition-opacity duration-300">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent p-4 pt-16 pointer-events-none">
+            {/* Category tag */}
+            {video.category && (
+              <span className="inline-block text-[10px] uppercase tracking-wider font-bold text-violet-400/90 bg-violet-500/10 px-2 py-0.5 rounded-full border border-violet-500/20 mb-2">
+                {video.category}
+              </span>
+            )}
+            <h3 className="text-white font-semibold text-xs sm:text-sm transition-opacity duration-300">
               {video.title}
             </h3>
+            {video.description && (
+              <p className="text-zinc-400 text-xs mt-1 line-clamp-2">{video.description}</p>
+            )}
           </div>
         )}
       </div>

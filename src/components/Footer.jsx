@@ -23,12 +23,12 @@ const Footer = ({ title, subtitle, footerRef, className = "" }) => {
           <div className="lg:col-span-5 flex flex-col justify-between gap-10">
             <div>
               {title && (
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-left">
+                <h2 className="text-2xl sm:text-4xl font-bold text-white mb-2 sm:mb-4 text-left">
                   {title}
                 </h2>
               )}
               {subtitle && (
-                <p className="text-zinc-400 text-lg max-w-md text-left">
+                <p className="text-zinc-400 text-xs sm:text-lg max-w-md text-left">
                   {subtitle}
                 </p>
               )}
@@ -65,6 +65,21 @@ const Footer = ({ title, subtitle, footerRef, className = "" }) => {
                 <div className="text-left">
                   <div className="text-sm text-zinc-500 uppercase font-semibold">Instagram</div>
                   <div className="text-zinc-200 font-mono text-base whitespace-nowrap">{OWNER.instagram.handle}</div>
+                </div>
+              </a>
+
+              <a
+                href={OWNER.whatsapp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/80 hover:border-green-500/50 hover:bg-zinc-900/60 transition-all duration-300 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center border border-green-500/20 group-hover:scale-105 transition-transform">
+                  <span className="text-lg">💬</span>
+                </div>
+                <div className="text-left">
+                  <div className="text-sm text-zinc-500 uppercase font-semibold">WhatsApp</div>
+                  <div className="text-zinc-200 font-mono text-base whitespace-nowrap">{OWNER.whatsapp.number}</div>
                 </div>
               </a>
             </div>

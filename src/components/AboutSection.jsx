@@ -1,26 +1,25 @@
 import { useInView } from "../hooks/useInView";
 import { ExternalLink, Sparkles } from "lucide-react";
-import { ABOUT, SKILLS, SOFTWARE, OWNER } from "@/constants/uiTexts";
+import { ABOUT, STATS, SOFTWARE, OWNER } from "@/constants/uiTexts";
 
 export default function AboutSection() {
-  const [ref, inView] = useInView({ threshold: 0.3 });
+  const [ref, inView] = useInView({ threshold: 0.05 });
 
   return (
     <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6 bg-zinc-900">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div
-          className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
-            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+          className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
             {ABOUT.heading}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
               {ABOUT.headingAccent}
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{ABOUT.subtitle}</p>
+          <p className="text-xs sm:text-base md:text-lg text-zinc-300 max-w-2xl mx-auto">{ABOUT.subtitle}</p>
         </div>
 
         {/* Main Content Grid */}
@@ -58,24 +57,24 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Skills */}
+            {/* What I Deliver — replaces old skill bars */}
             <div>
-              <h3 className="text-xl font-bold text-white mb-4">{ABOUT.skillsTitle}</h3>
-              <div className="space-y-4">
-                {SKILLS.map((skill) => (
-                  <div key={skill.name} className="space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-white font-medium">{skill.name}</span>
-                      <span className="text-violet-400 font-semibold text-sm">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-violet-500 to-pink-500 rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: inView ? `${skill.level}%` : "0%",
-                        }}
-                      />
-                    </div>
+              <h3 className="text-xl font-bold text-white mb-4">What I Deliver</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  "Reels & Shorts",
+                  "YouTube Edits",
+                  "Brand Content",
+                  "Color Grading",
+                  "Motion Graphics",
+                  "Sound Design",
+                ].map((skill) => (
+                  <div
+                    key={skill}
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-violet-500/40 transition-colors duration-300"
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-violet-500 to-pink-500 flex-shrink-0" />
+                    <span className="text-zinc-200 text-sm font-medium">{skill}</span>
                   </div>
                 ))}
               </div>
@@ -108,9 +107,9 @@ export default function AboutSection() {
             <div className="flex justify-center lg:justify-start">
               <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-2xl overflow-hidden border-2 border-violet-400/30">
                 <img
-                  src="/images/profilePic.jpg"
+                  src="/images/profilePic.png"
                   alt="Profile"
-                  className="w-full h-full object-cover scale-150 translate-y-8"
+                  className="w-full h-full object-cover scale-110 translate-y-0 translate-z-50"
                 />
               </div>
             </div>

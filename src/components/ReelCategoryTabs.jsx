@@ -14,7 +14,7 @@ const ReelCategoryTabs = ({ value, onChange, categories }) => (
         <TabsTrigger
           key={cat.key}
           value={cat.key}
-          className="mx-1 px-4 py-2 text-sm rounded-xl font-semibold transition-colors story-link whitespace-nowrap data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-pink-500 data-[state=active]:text-white text-zinc-400 hover:text-zinc-200 cursor-pointer"
+          className="mx-0.5 sm:mx-1 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-xl font-semibold transition-colors story-link whitespace-nowrap data-[state=active]:bg-gradient-to-r data-[state=active]:from-violet-500 data-[state=active]:to-pink-500 data-[state=active]:text-white text-zinc-400 hover:text-zinc-200 cursor-pointer"
         >
           {cat.label}
         </TabsTrigger>

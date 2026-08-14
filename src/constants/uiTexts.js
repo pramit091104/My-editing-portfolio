@@ -7,6 +7,10 @@ export const OWNER = {
     handle: "@editverse_x",
     url: "https://instagram.com/_editverse_x",
   },
+  whatsapp: {
+    number: "+91 7041887184",
+    url: "https://wa.me/917041887184?text=Hi%2C%20I%20want%20to%20discuss%20a%20video%20editing%20project",
+  },
 };
 
 // ─── Site-wide ───────────────────────────────────────────────────────────────
@@ -25,7 +29,10 @@ export const NAV_ITEMS = [
 
 // ─── Hero Section ────────────────────────────────────────────────────────────
 export const HERO = {
-  tagline: "Transforming your ideas into compelling visual narratives",
+  tagline: "Scroll-stopping reels & cinematic edits that drive retention",
+  ctaPrimary: "View My Work",
+  ctaSecondary: "Start a Project",
+  videoBgVimeoId: "1158649716",
 };
 
 // ─── Showreel (Index page) ───────────────────────────────────────────────────
@@ -61,20 +68,23 @@ export const ABOUT = {
       end: ", I bring unique perspectives to every project.",
     },
   ],
-  skillsTitle: "Skills & Expertise",
   softwareTitle: "Tools & Software",
   ctaTitle: "Ready to Create Something Amazing?",
   ctaSubtitle: "Let's collaborate and bring your vision to life.",
   ctaButton: "Let's Connect",
 };
 
-export const SKILLS = [
-  { name: "Videography", level: 95 },
-  { name: "Cinematography", level: 90 },
-  { name: "Reels/Shorts", level: 98 },
-  { name: "Long Video", level: 85 },
-  { name: "Storytelling", level: 92 },
-  { name: "Color Grading", level: 88 },
+// ─── Stats (replaces old skill bars) ─────────────────────────────────────────
+export const STATS_SECTION = {
+  heading: "The Numbers",
+  headingAccent: "Speak",
+};
+
+export const STATS = [
+  { value: 50, suffix: "+", label: "Projects Delivered" },
+  { value: 7, suffix: "", label: "Brands Served" },
+  { value: 2.5, suffix: "+", label: "Years Experience" },
+  { value: 2, suffix: "M+", label: "Total Views" },
 ];
 
 export const SOFTWARE = [
@@ -127,10 +137,10 @@ export const PORTFOLIO = {
 
 // ─── YouTube Videos ───────────────────────────────────────────────────────────
 export const YOUTUBE_VIDEOS = [
-  { id: "xjb1SzUb4rU", title: "Creative Video Edit" },
-  { id: "nWuKVOo50aY", title: "Professional Production" },
-  { id: "64M463Dn14Q", title: "Cinematic Storytelling" },
-  { id: "cgquyjJJ6MA", title: "Visual Narrative" },
+  { id: "xjb1SzUb4rU", title: "Restaurant Promo — Bartisans", description: "Cinematic food & ambiance reel for Pune's popular cocktail bar", client: "Bartisans", category: "Brand Content" },
+  { id: "nWuKVOo50aY", title: "Fitness Transformation Edit", description: "High-energy workout montage with dynamic transitions", client: "Fitness Empire", category: "Health & Fitness" },
+  { id: "64M463Dn14Q", title: "Cinematic Travel Story", description: "Narrative-driven travel video with color grading & sound design", client: "Personal Project", category: "Storytelling" },
+  { id: "cgquyjJJ6MA", title: "Brand Commercial — Soulvard", description: "Lifestyle brand commercial with premium visual aesthetics", client: "The Soulvard", category: "Lifestyle" },
 ];
 
 // ─── Reels / Vertical Videos ─────────────────────────────────────────────────
@@ -163,8 +173,8 @@ export const REELS = [
   { id: "o2", category: "Fitness", vimeoId: "1136422943", title: "Fitness Reel", get embedUrl() { return vimeoUrl(this.vimeoId); } },
   //Real Estate
   { id: "o3", category: "Real Estate", vimeoId: "1137229787", title: "Real Estate-1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "c1", category: "Real Estate", vimeoId: "1211129693", title: "Real Estate-2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
-  { id: "c1", category: "Real Estate", vimeoId: "1207097087", title: "Real Estate-3", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "re2", category: "Real Estate", vimeoId: "1211129693", title: "Real Estate-2", get embedUrl() { return vimeoUrl(this.vimeoId); } },
+  { id: "re3", category: "Real Estate", vimeoId: "1207097087", title: "Real Estate-3", get embedUrl() { return vimeoUrl(this.vimeoId); } },
   //concert
   { id: "e1", category: "concert", vimeoId: "1129288199", title: "Event 1", get embedUrl() { return vimeoUrl(this.vimeoId); } },
 
@@ -176,6 +186,53 @@ export const NOT_FOUND = {
   message: "Oops! Page not found",
   backLabel: "Return to Home",
   backPath: "/",
+};
+
+// ─── Testimonials ────────────────────────────────────────────────────────────
+export const TESTIMONIALS_SECTION = {
+  heading: "What Clients",
+  headingAccent: "Say",
+  subtitle: "Trusted by brands to deliver scroll-stopping content",
+};
+
+export const TESTIMONIALS = [
+  {
+    quote: "editverse transformed our brand's social presence with stunning reels that consistently drive engagement and new customers.",
+    name: "Restaurant Owner",
+    company: "Bartisans",
+    category: "Hospitality",
+  },
+  {
+    quote: "Professional, creative, and always on time. The video quality exceeded our expectations and boosted our social media reach significantly.",
+    name: "Fitness Trainer",
+    company: "The Fitness Empire",
+    category: "Health & Fitness",
+  },
+  {
+    quote: "The cinematic edits and storytelling approach made our brand stand out. Highly recommend for anyone looking for premium video content.",
+    name: "Brand Manager",
+    company: "The Soulvard",
+    category: "Lifestyle",
+  },
+  {
+    quote: "From concept to delivery, the entire process was smooth. The final product was exactly what we envisioned, but better.",
+    name: "Marketing Head",
+    company: "Meditourz",
+    category: "Healthcare",
+  },
+];
+
+// ─── Process / How I Work ───────────────────────────────────────────────────
+export const PROCESS = {
+  heading: "How I",
+  headingAccent: "Work",
+  subtitle: "A streamlined process from concept to delivery",
+  steps: [
+    { number: "01", title: "Briefing", description: "We discuss your vision, goals, and target audience", icon: "MessageSquare" },
+    { number: "02", title: "Editing", description: "I craft the edit with creative precision and storytelling", icon: "Film" },
+    { number: "03", title: "Review", description: "You review the draft and share feedback for revisions", icon: "Eye" },
+    { number: "04", title: "Delivery", description: "Final polished files delivered, ready to publish", icon: "Rocket" },
+  ],
 };
 
 // ─── Footer ───────────────────────────────────────────────────────────────────

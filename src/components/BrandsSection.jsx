@@ -16,7 +16,7 @@ const scrollStyle = `
 `;
 
 const BrandsSection = () => {
-  const [headerRef, headerInView] = useInView({ threshold: 0.3 });
+  const [headerRef, headerInView] = useInView({ threshold: 0.05 });
 
   return (
     <section className="py-16 sm:py-20 px-4 sm:px-6 bg-zinc-950">
@@ -24,17 +24,17 @@ const BrandsSection = () => {
         {/* Header */}
         <div
           ref={headerRef}
-          className={`text-center mb-12 sm:mb-16 transition-all duration-700 ${
+          className={`text-center mb-8 sm:mb-16 transition-all duration-700 ${
             headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
             {BRANDS_SECTION.heading}{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
               {BRANDS_SECTION.headingAccent}
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">{BRANDS_SECTION.subtitle}</p>
+          <p className="text-xs sm:text-base md:text-lg text-zinc-300 max-w-2xl mx-auto">{BRANDS_SECTION.subtitle}</p>
         </div>
 
         {/* Scrolling Brands */}

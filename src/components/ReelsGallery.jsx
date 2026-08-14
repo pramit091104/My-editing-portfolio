@@ -97,7 +97,7 @@ function ReelCard({ reel, idx }) {
 
               {/* Title */}
               <div
-                className="absolute bottom-12 left-3 right-3 text-white text-sm font-semibold leading-tight"
+                className="absolute bottom-12 left-3 right-3 text-white text-xs sm:text-sm font-semibold leading-tight"
                 style={{
                   opacity: hovered ? 1 : 0,
                   transform: hovered ? "translateY(0)" : "translateY(6px)",

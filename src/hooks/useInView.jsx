@@ -4,14 +4,36 @@ export function useInView(options = {}) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
+  const threshold = options.threshold ?? 0.05;
+  const rootMargin = options.rootMargin ?? "0px 0px -40px 0px";
+
   useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      options
+    const element = ref.current;
+    if (!element) return;
+
+    // Fallback if IntersectionObserver is not supported
+    if (!("IntersectionObserver" in window)) {
+      setInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          // Once in view, we can unobserve to prevent unneeded re-renders
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold, rootMargin }
     );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [options]);
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [threshold, rootMargin]);
 
   return [ref, inView];
 }
