@@ -30,7 +30,7 @@ const BrandsSection = () => {
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
             {BRANDS_SECTION.heading}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+            <span className="text-violet-400">
               {BRANDS_SECTION.headingAccent}
             </span>
           </h2>
@@ -83,7 +83,7 @@ const BrandsSection = () => {
           <p className="text-zinc-300 mb-4">{BRANDS_SECTION.ctaSubtitle}</p>
           <a
             href={`mailto:${OWNER.email}`}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold rounded-lg hover:from-violet-600 hover:to-pink-600 transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-violet-500 text-white font-semibold rounded-lg hover:bg-violet-600 transition-colors duration-300"
           >
             <span>{BRANDS_SECTION.ctaButton}</span>
             <ExternalLink className="w-4 h-4" />

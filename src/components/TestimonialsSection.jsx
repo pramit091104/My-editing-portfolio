@@ -10,7 +10,7 @@ function TestimonialCard({ testimonial }) {
       <div className="relative h-full p-6 sm:p-8 rounded-2xl bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/60 hover:border-violet-500/30 transition-all duration-300 group">
         {/* Quote icon */}
         <div className="mb-4">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 flex items-center justify-center border border-violet-500/20">
+          <div className="w-10 h-10 rounded-xl bg-violet-500/20 flex items-center justify-center border border-violet-500/20">
             <Quote className="w-5 h-5 text-violet-400" />
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
             {TESTIMONIALS_SECTION.heading}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+            <span className="text-violet-400">
               {TESTIMONIALS_SECTION.headingAccent}
             </span>
           </h2>
@@ -122,7 +122,7 @@ export default function TestimonialsSection() {
                 onClick={() => emblaApi?.scrollTo(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   i === selectedIndex
-                    ? "w-6 bg-gradient-to-r from-violet-500 to-pink-500"
+                    ? "w-6 bg-violet-500"
                     : "bg-zinc-700 hover:bg-zinc-500"
                 }`}
                 aria-label={`Go to testimonial ${i + 1}`}

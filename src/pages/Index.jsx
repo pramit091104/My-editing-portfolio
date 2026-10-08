@@ -39,7 +39,7 @@ const Index = () => {
             <div className="text-center mb-6 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">
                 {SHOWREEL.heading}{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+                <span className="text-violet-400">
                   {SHOWREEL.headingAccent}
                 </span>
               </h2>

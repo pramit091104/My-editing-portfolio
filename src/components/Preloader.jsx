@@ -43,7 +43,7 @@ export default function Preloader({ children }) {
 
         {/* Progress bar */}
         <div className="w-48 sm:w-64 h-[2px] bg-zinc-800 rounded-full overflow-hidden">
-          <div className="preloader-bar h-full bg-gradient-to-r from-violet-500 to-pink-500 rounded-full" />
+          <div className="preloader-bar h-full bg-violet-500 rounded-full" />
         </div>
 
         {/* Tagline */}

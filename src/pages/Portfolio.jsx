@@ -27,7 +27,7 @@ const Portfolio = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-3 sm:mb-6">
               {PORTFOLIO.heading}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+              <span className="text-violet-400">
                 {PORTFOLIO.headingAccent}
               </span>
             </h1>
@@ -51,7 +51,7 @@ const Portfolio = () => {
                 <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">{PORTFOLIO.vertical.heading}</h2>
               </div>
               <p className="text-xs sm:text-base md:text-lg text-zinc-300 max-w-2xl mx-auto">{PORTFOLIO.vertical.subtitle}</p>
-              <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-violet-500 to-pink-500 mx-auto mt-3 sm:mt-4 rounded-full" />
+              <div className="w-16 sm:w-20 h-1 bg-violet-500 mx-auto mt-3 sm:mt-4 rounded-full" />
             </div>
             <ReelsGallery />
           </div>
@@ -73,7 +73,7 @@ const Portfolio = () => {
                 <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white">{PORTFOLIO.longForm.heading}</h2>
               </div>
               <p className="text-xs sm:text-base md:text-lg text-zinc-300 max-w-2xl mx-auto">{PORTFOLIO.longForm.subtitle}</p>
-              <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-red-500 to-pink-500 mx-auto mt-3 sm:mt-4 rounded-full" />
+              <div className="w-16 sm:w-20 h-1 bg-red-500 mx-auto mt-3 sm:mt-4 rounded-full" />
             </div>
             <YoutubeGallery />
           </div>
@@ -85,14 +85,14 @@ const Portfolio = () => {
             <div className="p-5 sm:p-8 rounded-2xl bg-zinc-800/30 border border-violet-500/30">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-4">
                 {PORTFOLIO.cta.heading}{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+                <span className="text-violet-400">
                   {PORTFOLIO.cta.headingAccent}
                 </span>
               </h3>
               <p className="text-zinc-300 text-xs sm:text-base mb-4 sm:mb-6">{PORTFOLIO.cta.subtitle}</p>
               <a
                 href={`mailto:${OWNER.email}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-8 sm:py-3.5 bg-gradient-to-r from-violet-500 to-pink-500 text-white text-xs sm:text-base font-semibold rounded-xl hover:from-violet-600 hover:to-pink-600 transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-8 sm:py-3.5 bg-violet-500 text-white text-xs sm:text-base font-semibold rounded-xl hover:bg-violet-600 transition-colors duration-300"
               >
                 <Play className="w-4 h-4" />
                 <span>{PORTFOLIO.cta.button}</span>

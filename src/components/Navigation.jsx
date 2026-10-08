@@ -76,7 +76,7 @@ const Navigation = () => {
       <div className="hidden md:block">
         <button
           onClick={handleContactClick}
-          className="bg-white hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-500 hover:text-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow transition-all duration-300 text-sm md:text-base font-semibold focus:outline-none cursor-pointer"
+          className="bg-white hover:bg-violet-500 hover:text-white text-zinc-900 font-mono px-4 md:px-6 py-2 rounded-xl shadow transition-all duration-300 text-sm md:text-base font-semibold focus:outline-none cursor-pointer"
         >
           CONTACT
         </button>
@@ -86,7 +86,7 @@ const Navigation = () => {
       <div className={`md:hidden w-full ${menuOpen ? "block" : "hidden"}`}>
         <button
           onClick={handleContactClick}
-          className="bg-white hover:bg-gradient-to-r hover:from-violet-500 hover:to-pink-500 hover:text-white text-zinc-900 font-mono px-4 py-2 rounded-xl shadow transition-all duration-300 text-sm font-semibold focus:outline-none w-full cursor-pointer"
+          className="bg-white hover:bg-violet-500 hover:text-white text-zinc-900 font-mono px-4 py-2 rounded-xl shadow transition-all duration-300 text-sm font-semibold focus:outline-none w-full cursor-pointer"
         >
           CONTACT
         </button>

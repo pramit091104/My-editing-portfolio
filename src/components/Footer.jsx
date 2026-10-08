@@ -59,7 +59,7 @@ const Footer = ({ title, subtitle, footerRef, className = "" }) => {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/80 hover:border-pink-500/50 hover:bg-zinc-900/60 transition-all duration-300 group"
               >
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 flex items-center justify-center border border-pink-500/20 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center border border-pink-500/20 group-hover:scale-105 transition-transform">
                   <InstagramIcon />
                 </div>
                 <div className="text-left">

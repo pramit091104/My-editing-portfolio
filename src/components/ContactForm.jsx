@@ -59,7 +59,7 @@ export default function ContactForm() {
   return (
     <div className="relative w-full max-w-lg mx-auto">
       {/* Ambient Glow behind Form */}
-      <div className="absolute -inset-4 bg-gradient-to-r from-violet-500/10 to-pink-500/10 rounded-2xl blur-3xl opacity-50 pointer-events-none z-0" />
+      <div className="absolute -inset-4 bg-violet-500/10 rounded-2xl blur-3xl opacity-50 pointer-events-none z-0" />
 
       <form
         onSubmit={handleSubmit}
@@ -119,7 +119,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-violet-500 to-pink-500 text-white text-sm sm:text-base font-semibold rounded-xl hover:from-violet-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-violet-500/10 cursor-pointer"
+          className="w-full mt-2 inline-flex items-center justify-center gap-2 px-6 py-3 bg-violet-500 text-white text-sm sm:text-base font-semibold rounded-xl hover:bg-violet-600 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-violet-500/10 cursor-pointer"
         >
           {loading ? (
             <>

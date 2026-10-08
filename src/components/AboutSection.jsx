@@ -1,6 +1,6 @@
 import { useInView } from "../hooks/useInView";
 import { ExternalLink, Sparkles } from "lucide-react";
-import { ABOUT, STATS, SOFTWARE, OWNER } from "@/constants/uiTexts";
+import { ABOUT, SOFTWARE, OWNER } from "@/constants/uiTexts";
 
 export default function AboutSection() {
   const [ref, inView] = useInView({ threshold: 0.05 });
@@ -15,7 +15,7 @@ export default function AboutSection() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
             {ABOUT.heading}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+            <span className="text-violet-400">
               {ABOUT.headingAccent}
             </span>
           </h2>
@@ -73,7 +73,7 @@ export default function AboutSection() {
                     key={skill}
                     className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-violet-500/40 transition-colors duration-300"
                   >
-                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-violet-500 to-pink-500 flex-shrink-0" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-violet-500 flex-shrink-0" />
                     <span className="text-zinc-200 text-sm font-medium">{skill}</span>
                   </div>
                 ))}
@@ -90,7 +90,7 @@ export default function AboutSection() {
                     className="flex items-center gap-2 p-2.5 sm:p-3 rounded-lg bg-zinc-800/50 border border-zinc-700/50 hover:border-violet-500/50 transition-colors duration-300"
                   >
                     <div
-                      className={`w-8 h-8 rounded-lg bg-gradient-to-br ${sw.color} flex items-center justify-center text-white font-bold text-xs`}
+                      className={`w-8 h-8 rounded-lg ${sw.color} flex items-center justify-center text-white font-bold text-xs`}
                     >
                       {sw.icon}
                     </div>
@@ -120,7 +120,7 @@ export default function AboutSection() {
               <p className="text-zinc-300 mb-3 text-sm">{ABOUT.ctaSubtitle}</p>
               <a
                 href={`mailto:${OWNER.email}`}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white font-semibold rounded-lg hover:from-violet-600 hover:to-pink-600 transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-violet-500 text-white font-semibold rounded-lg hover:bg-violet-600 transition-colors duration-300"
               >
                 <span>{ABOUT.ctaButton}</span>
                 <ExternalLink className="w-4 h-4" />

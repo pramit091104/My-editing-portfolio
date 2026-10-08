@@ -23,14 +23,14 @@ function ProcessStep({ step, index, total, inView }) {
       {/* Step number + icon */}
       <div className="relative mb-4">
         {/* Glow ring */}
-        <div className="absolute -inset-3 bg-gradient-to-r from-violet-500/20 to-pink-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute -inset-3 bg-violet-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 border border-violet-500/30 flex items-center justify-center group hover:border-violet-500/60 transition-all duration-300">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-violet-500/20 border border-violet-500/30 flex items-center justify-center group hover:border-violet-500/60 transition-all duration-300">
           <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-violet-400 group-hover:text-white transition-colors duration-300" />
         </div>
 
         {/* Step number badge */}
-        <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gradient-to-r from-violet-500 to-pink-500 flex items-center justify-center text-white text-[10px] font-bold shadow-lg">
+        <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-violet-500 flex items-center justify-center text-white text-[10px] font-bold shadow-lg">
           {step.number}
         </div>
       </div>
@@ -51,12 +51,12 @@ function ProcessStep({ step, index, total, inView }) {
           {/* Desktop: horizontal line to the right */}
           <div className="hidden lg:block absolute top-8 sm:top-10 left-[calc(50%+2.5rem)] sm:left-[calc(50%+3rem)] w-[calc(100%-1rem)] h-[2px]">
             <div
-              className="h-full bg-gradient-to-r from-violet-500/50 to-pink-500/30 rounded-full transition-all duration-1000"
+              className="h-full bg-violet-500/50 rounded-full transition-all duration-1000"
               style={{ width: inView ? "100%" : "0%" }}
             />
           </div>
           {/* Mobile: vertical line downward */}
-          <div className="lg:hidden w-[2px] h-8 my-2 bg-gradient-to-b from-violet-500/50 to-pink-500/30 rounded-full" />
+          <div className="lg:hidden w-[2px] h-8 my-2 bg-violet-500/50 rounded-full" />
         </>
       )}
     </div>
@@ -77,7 +77,7 @@ export default function ProcessSection() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
             {PROCESS.heading}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+            <span className="text-violet-400">
               {PROCESS.headingAccent}
             </span>
           </h2>

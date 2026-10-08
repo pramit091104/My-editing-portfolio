@@ -42,14 +42,14 @@ function StatCard({ stat, index, inView }) {
       }}
     >
       {/* Glow */}
-      <div className="absolute -inset-2 bg-gradient-to-r from-violet-500/10 to-pink-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute -inset-2 bg-violet-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
       <div className="relative z-10 text-center">
         <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+          <span className="text-violet-400">
             {formatted}
           </span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+          <span className="text-violet-400">
             {stat.suffix}
           </span>
         </div>
@@ -60,7 +60,7 @@ function StatCard({ stat, index, inView }) {
 
       {/* Bottom accent line */}
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-violet-500 to-pink-500 rounded-full transition-all duration-500"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-violet-500 rounded-full transition-all duration-500"
         style={{ width: inView ? "60%" : "0%" }}
       />
     </div>
@@ -81,7 +81,7 @@ export default function StatsSection() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 sm:mb-3">
             {STATS_SECTION.heading}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-pink-400">
+            <span className="text-violet-400">
               {STATS_SECTION.headingAccent}
             </span>
           </h2>

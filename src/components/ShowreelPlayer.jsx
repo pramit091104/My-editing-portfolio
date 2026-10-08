@@ -24,7 +24,7 @@ export default function ShowreelPlayer() {
       }}
     >
       {/* Pulsating cinematic ambient glow behind the player */}
-      <div className="absolute -inset-8 bg-gradient-to-r from-violet-500/20 via-pink-500/10 to-violet-500/5 rounded-2xl blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none z-0 animate-pulse" />
+      <div className="absolute -inset-8 bg-violet-500/15 rounded-2xl blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none z-0 animate-pulse" />
 
       {/* Overflow wrapper */}
       <div className="relative rounded-xl overflow-hidden border border-zinc-700/50 bg-zinc-900/50 backdrop-blur-sm w-full h-full z-10 shadow-2xl">
@@ -57,7 +57,7 @@ export default function ShowreelPlayer() {
             {/* Glowing Play Icon Badge — always visible */}
             <div className="flex flex-col items-center gap-2">
               <div className="w-20 h-20 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-2xl opacity-80 group-hover:opacity-100 transform scale-95 group-hover:scale-105 transition-all duration-500">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-violet-500 to-pink-500 flex items-center justify-center shadow-lg shadow-violet-500/30 animate-pulse">
+                <div className="w-14 h-14 rounded-full bg-violet-500 flex items-center justify-center shadow-lg shadow-violet-500/30 animate-pulse">
                   <Play className="w-5 h-5 fill-white text-white translate-x-0.5" />
                 </div>
               </div>

@@ -32,7 +32,6 @@ export const HERO = {
   tagline: "Scroll-stopping reels & cinematic edits that drive retention",
   ctaPrimary: "View My Work",
   ctaSecondary: "Start a Project",
-  videoBgVimeoId: "1158649716",
 };
 
 // ─── Showreel (Index page) ───────────────────────────────────────────────────
@@ -88,9 +87,9 @@ export const STATS = [
 ];
 
 export const SOFTWARE = [
-  { name: "After Effects", icon: "Ae", color: "from-purple-600 to-blue-600" },
-  { name: "Premiere Pro", icon: "Pr", color: "from-purple-600 to-pink-600" },
-  { name: "CapCut", icon: "Cc", color: "from-gray-600 to-gray-800" },
+  { name: "After Effects", icon: "Ae", color: "bg-indigo-600" },
+  { name: "Premiere Pro", icon: "Pr", color: "bg-violet-600" },
+  { name: "CapCut", icon: "Cc", color: "bg-zinc-700" },
 ];
 
 // ─── Brands Section ──────────────────────────────────────────────────────────
@@ -153,7 +152,9 @@ export const REEL_CATEGORIES = [
   { key: "concert", label: "Concert" },
 ];
 
-const vimeoUrl = (id) =>
+// Live reels come from the Google Sheet (see src/hooks/useReels.js). REEL_CATEGORIES and
+// REELS are the fallback used when VITE_REELS_SHEET_CSV_URL is unset or the sheet fails to load.
+export const vimeoUrl = (id) =>
   `https://player.vimeo.com/video/${id}?title=0&byline=0&portrait=0`;
 
 export const REELS = [

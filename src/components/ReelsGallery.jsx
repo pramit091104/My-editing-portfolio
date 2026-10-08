@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ReelCategoryTabs from "./ReelCategoryTabs";
-import { REELS, REEL_CATEGORIES } from "@/constants/uiTexts";
+import { useReels } from "@/hooks/useReels";
 
 function formatViews(n) {
   if (!n) return null;
@@ -33,7 +33,7 @@ function ReelCard({ reel, idx }) {
       data-cursor={!playing ? "play" : undefined}
     >
       {/* Cinematic Ambient Glow */}
-      <div className="absolute -inset-6 bg-gradient-to-r from-violet-500/15 to-pink-500/15 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+      <div className="absolute -inset-6 bg-violet-500/15 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
       {/* Overflow wrapper */}
       <div className="relative rounded-xl overflow-hidden z-10 w-full h-full">
@@ -138,12 +138,23 @@ function ReelCard({ reel, idx }) {
 }
 
 const ReelsGallery = () => {
-  const [selected, setSelected] = useState(REEL_CATEGORIES[0].key);
-  const filtered = REELS.filter((r) => r.category === selected);
+  const { reels, categories, loading } = useReels();
+  const [selected, setSelected] = useState(null);
+  // Fall back to the first tab until the user picks one (or if their pick vanished from the sheet).
+  const active = categories.some((c) => c.key === selected) ? selected : categories[0]?.key;
+  const filtered = reels.filter((r) => r.category === active);
+
+  if (loading) {
+    return (
+      <div className="w-full flex justify-center py-16">
+        <div className="w-8 h-8 rounded-full border-2 border-zinc-700 border-t-violet-500 animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="w-full flex flex-col items-center px-2 sm:px-4">
-      <ReelCategoryTabs value={selected} onChange={setSelected} categories={REEL_CATEGORIES} />
+      <ReelCategoryTabs value={active} onChange={setSelected} categories={categories} />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full max-w-5xl justify-items-center">
         {filtered.map((reel, idx) => (
           <ReelCard key={reel.id + idx} reel={reel} idx={idx} />
