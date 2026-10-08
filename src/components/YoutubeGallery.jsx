@@ -62,8 +62,8 @@ function YoutubeCard({ video, index }) {
               {/* Overlay tint */}
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
 
-              {/* Central Play Button */}
-              <div className="w-16 h-16 rounded-full flex items-center justify-center bg-red-600/90 text-white border border-white/20 shadow-xl opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all duration-300">
+              {/* Central Play Button — touch devices only; mouse users get the play cursor from CustomCursor */}
+              <div className="[@media(pointer:fine)]:hidden w-16 h-16 rounded-full flex items-center justify-center bg-red-600/90 text-white border border-white/20 shadow-xl opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all duration-300">
                 <Play className="w-6 h-6 fill-white text-white translate-x-0.5" />
               </div>
             </div>

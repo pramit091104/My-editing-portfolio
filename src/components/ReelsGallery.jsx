@@ -108,8 +108,9 @@ function ReelCard({ reel, idx }) {
                 {reel.title}
               </div>
 
-              {/* Play button */}
+              {/* Play button — touch devices only; mouse users get the play cursor from CustomCursor */}
               <div
+                className="[@media(pointer:fine)]:hidden"
                 style={{
                   opacity: hovered ? 1 : 0,
                   transform: hovered ? "scale(1)" : "scale(0.8)",
